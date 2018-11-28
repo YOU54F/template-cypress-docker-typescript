@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "types": ["cypress"]
+  },
+  "include": [
+    "cypress/*/*.ts",
+    "cypress/*/*/*.ts",
+    "cypress/*/*/*/*.ts"
+  ]
+}

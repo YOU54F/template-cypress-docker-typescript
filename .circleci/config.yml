@@ -1,0 +1,51 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      # the Docker image with Cypress dependencies
+      - image: cypress/base:8
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - v2-deps-{{ .Branch }}-
+            - v2-deps-
+      - run: npm ci
+      - save_cache:
+          key: v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run:
+          name: Install jq
+          command: apt-get install jq
+      - run:
+          name: Sonarqube if Pull Request
+          command: ./.circleci/sonar-scanner-on-pr.sh          
+      - run:
+          name: Running E2E tests with recording
+          when: on_success
+          command: cd e2e && npm run cypress:run         
+      - store_test_results:
+          path: cypress/reports
+      - store_artifacts:
+          path: cypress/reports
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+      - run:
+          name: Slack Custom Reporting
+          when: always
+          command: ./.circleci/slack-alert.sh
+
+workflows:
+  build-test:
+    jobs:
+      - test
