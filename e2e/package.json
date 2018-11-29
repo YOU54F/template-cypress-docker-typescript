@@ -8,7 +8,8 @@
   "license": "ISC",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "cypress:record": "cypress run --record"
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "^4.0.2",
