@@ -52,15 +52,15 @@ export GIT_COMMIT_URL=https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PRO
       fi     
 
 # if no tests, we error and we must send this back to slack instead of a false positive
-      if [ -z "$TOTAL_TESTS" ]; then
+      if [ -z "$TOTAL_TESTS" -o -z "$REPORT_LOCATION" ]; then
             curl -X POST -H 'Content-type: application/json' \
             --data '{"text":"'${CIRCLE_PROJECT_REPONAME}' test build failed.\nThis run was triggered by <'$GIT_COMMIT_URL'|'${CIRCLE_USERNAME}'>'"$pr_link"'","channel":"'$SLACK_API_CHANNEL'",
-            "attachments":[{"color":"#ff0000","fallback":"Report available at '$REPORT_ARTEFACT_LOCATION'",
+            "attachments":[{"color":"#ff0000",
             "title":"There was a build error, see logs for details",
             "text":"Environment: '${CIRCLE_BRANCH}'",
             "actions":[{"type":"button","text":"CircleCI Logs","url":"'${CIRCLE_BUILD_URL}'","style":"danger"}]}]}' \
             $SLACK_WEBHOOK_URL 
-# if total tests failing is more than 0, publish failure to slack
+# if total tests failing is >= 0 publish failure to slack
       elif [ $TOTAL_TESTS_FAILING -gt 0 -o $TOTAL_TESTS_PASSING -eq 0 ]; then
             curl -X POST -H 'Content-type: application/json' \
             --data '{"text":"'${CIRCLE_PROJECT_REPONAME}' test run failed.\nThis run was triggered by <'$GIT_COMMIT_URL'|'${CIRCLE_USERNAME}'>'"$pr_link"'","channel":"'$SLACK_API_CHANNEL'",
