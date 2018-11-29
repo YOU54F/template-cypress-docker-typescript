@@ -38,7 +38,7 @@ It showcases the use of:-
 
 The main cypress configuration file, is in the e2e folder
 
-`cypress.json`
+- `cypress.json`
 
 It can contain configuration options applicable to all environments
 
@@ -48,7 +48,7 @@ These will override any configurations specific environment vars set in `cypress
 
 these can be set on the command line by
 
-`--env configFile=<environment.json>`
+- `--env configFile=<environment.json>`
 
 Currently supported environments are
 
@@ -70,7 +70,7 @@ If you are using docker then please set your URI_ROOT in your docker-compose fil
             - URI_ROOT=http://the-internet.herokuapp.com
 ```
 
-If it's not set, and you set `--env configFile=development` the application will error, and ask you to set it.
+If it's URI_ROOT is not, and you select `--env configFile=development` the application will error, and ask you to set it.
 
 ## Running tests in Docker via Make
 
@@ -91,16 +91,14 @@ For more, see the Makefile
 
 - `npm run cypress:open` - runs test via gui
 - `npm run cypress:run`  - run tests via command line
+- `--env configFile=<env>` - select an environment specific config
+- `-s '<pathToFile>'` path for the spec files you wish to run 
+  - `-s 'cypress/integration/commands.spec.js'` example
 
-Provide an env with `--env configFile=<env>`
+### GUI - Any changes made to test files are automatically picked up by the GUI and executed, post file save
 
-And the path for the spec files you wish to run `-s '<pathToFile>'` eg `-s 'cypress/integration/examples/theinternet.spec.js'`
-
-### GUI - Any changes made to test files are automatically picked up by the GUI and executed, post file save.
-
-`make test-local-gui` Opens the GUI with the development configuration selection
-
-`make test-qa-gui` 	Opens the GUI with the qa configuration selection
+- `make test-local-gui` Opens the GUI with the development configuration selection
+- `make test-qa-gui`    Opens the GUI with the qa configuration selection
 
 The GUI can be opened by `npx cypress open` but requires a `--env configFile=<env>` option in order to set the correct BaseURL
 
@@ -116,14 +114,14 @@ Reports of test runs are generated with MochaAwesome are stored in `e2e/cypress/
 
 - Spec (test) files are written as `example.spec.ts` and contained in `e2e/cypress/integration`
 - There is a `tsconfig.json` file in the `e2e` folder
-- - It includes the paths for the `.ts` files. If you add other paths for yours, include them here.
-- - It contains the typescript options and includes the Cypress typings for code completion.
-- - use visual studio code (if you aren't already) - it's free and comes feature packed.
+  - It includes the paths for the `.ts` files. If you add other paths for yours, include them here.
+  - It contains the typescript options and includes the Cypress typings for code completion.
+  - use visual studio code (if you aren't already) - it's free and comes feature packed.
 - There is a `tslint.json` file in the `e2e` folder
-- - Contains some rules for code linting
+  - Contains some rules for code linting
 - Tests are compiled with webpack typescript pre-processor.
-- - The config file is in `e2e/webpack.config.js`
-- - It is loaded in `e2e/cypress/plugins/index.js`, hooking into cypress's `on` event.
+  - The config file is in `e2e/webpack.config.js`
+  - It is loaded in `e2e/cypress/plugins/index.js`, hooking into cypress's `on` event.
 
 ## CircleCI
 
@@ -170,8 +168,8 @@ First build a Slack app & create an incoming webhook
 
 Set the following environment variable in your localhost or CI configuration
 
-- $SLACK_WEBHOOK_URL - The full URL you created in the last step
-- $SLACK_API_CHANNEL - The channel ref you wish to publish to (right-click on your channel and click copy link, check the link, its the digits after the last / )
+- `$SLACK_WEBHOOK_URL` - The full URL you created in the last step
+- `$SLACK_API_CHANNEL` - The channel ref you wish to publish to (right-click on your channel and click copy link, check the link, its the digits after the last / )
 
 ### Cypress Dashboard Recording
 
