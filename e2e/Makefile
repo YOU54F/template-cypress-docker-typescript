@@ -25,7 +25,7 @@ test-qa-gui:
 	$(CYPRESSGUICMD) --env configFile=qa
 
 test-record:
-	$(CYPRESSGUICMD) --env configFile=qa --record
+	$(CYPRESSRUNCMD) --record
 
 docker-build:
 	docker build . -t $(DOCKERIMGNAME)
