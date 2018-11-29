@@ -5,13 +5,17 @@ describe('Testing Global Namespace Commands.ts', () => {
     // note TypeScript definition
     const x: number = 42
   })
-  
+
   it('uses custom command cy.foo()', () => {
     cy.foo().should('be.equal', 'foo')
   })
 
   it('uses custom command cy.foo2() which returns the result of cy.foo()', () => {
     cy.foo2().should('be.equal', 'foo')
+  })
+
+  it('can import helper functions - add 2 numbers', () => {
+    expect(add(2, 3)).to.equal(5)
   })
 
   it('adds numbers - Yields sum of 2 numbers', () => {
@@ -22,7 +26,7 @@ describe('Testing Global Namespace Commands.ts', () => {
     cy.greeting()
   })
 
-  it.only('can accept user args to print to console.log', () => {
+  it('can accept user args to print to console.log', () => {
     cy.greeting({ greeting: 'Hello', name: 'Friend' })
   })
 
