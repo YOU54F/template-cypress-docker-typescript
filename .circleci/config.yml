@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Running E2E tests with recording
           when: on_success
-          command: cd e2e && npm run cypress:record         
+          command: cd e2e && make test-record        
       - store_test_results:
           path: e2e/cypress/reports
       - store_artifacts:
