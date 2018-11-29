@@ -33,13 +33,13 @@ jobs:
           when: on_success
           command: cd e2e && npm run cypress:run         
       - store_test_results:
-          path: cypress/reports
+          path: e2e/cypress/reports
       - store_artifacts:
-          path: cypress/reports
+          path: e2e/cypress/reports
       - store_artifacts:
-          path: cypress/videos
+          path: e2e/cypress/videos
       - store_artifacts:
-          path: cypress/screenshots
+          path: e2e/cypress/screenshots
       - run:
           name: Slack Custom Reporting
           when: always
