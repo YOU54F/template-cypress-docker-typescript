@@ -5,14 +5,10 @@ CYPRESSGUICMD=npx cypress open
 
 test:
 	$(CYPRESSRUNCMD)
-<<<<<<< HEAD
-
+	
 test-gui:
 	$(CYPRESSGUICMD)
 
-=======
-	
->>>>>>> origin/master
 test-local:
 	$(CYPRESSRUNCMD) --env configFile=development
 
