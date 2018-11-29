@@ -18,3 +18,19 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+beforeEach(() => {
+  cy.log('Test Started')
+})
+
+afterEach(() => {
+  cy.log('Test Completed')
+})
+
+before(() => {
+  cy.log('Test Suite Started')
+})
+
+after(() => {
+  cy.log('Test Suite Completed')
+})
