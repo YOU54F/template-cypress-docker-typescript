@@ -16,7 +16,7 @@ jobs:
             - v2-deps-{{ .Branch }}-{{ checksum "e2e/package-lock.json" }}
             - v2-deps-{{ .Branch }}-
             - v2-deps-
-      - run: npm ci
+      - run: cd e2e && npm ci
       - save_cache:
           key: v2-deps-{{ .Branch }}-{{ checksum "e2e/package-lock.json" }}
           paths:
@@ -24,22 +24,22 @@ jobs:
             - ~/.cache
       - run:
           name: Install jq
-          command: apt-get install jq
-      - run:
-          name: Sonarqube if Pull Request
-          command: ./.circleci/sonar-scanner-on-pr.sh          
+          command: cd e2e && apt-get install jq
+    #   - run:
+    #       name: Sonarqube if Pull Request
+    #       command: ./.circleci/sonar-scanner-on-pr.sh          
       - run:
           name: Running E2E tests with recording
           when: on_success
-          command: cd e2e && npm run cypress:run         
+          command: cd e2e && npm run cypress:record         
       - store_test_results:
-          path: cypress/reports
+          path: e2e/cypress/reports
       - store_artifacts:
-          path: cypress/reports
+          path: e2e/cypress/reports
       - store_artifacts:
-          path: cypress/videos
+          path: e2e/cypress/videos
       - store_artifacts:
-          path: cypress/screenshots
+          path: e2e/cypress/screenshots
       - run:
           name: Slack Custom Reporting
           when: always
