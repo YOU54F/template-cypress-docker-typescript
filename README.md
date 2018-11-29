@@ -1,18 +1,23 @@
-# Cypress IO Typescript Example 
+# Cypress IO Typescript Example
 
-<!-- [![CircleCI](https://circleci.com/gh/YOU54F/cypressio-docker.svg?style=svg)](https://circleci.com/gh/YOU54F/cypressio-docker)
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=YOU54F_cypressio-docker&metric=alert_status)](https://sonarcloud.io/dashboard?id=YOU54F_cypressio-docker) -->
+[![CircleCI](https://circleci.com/gh/YOU54F/cypressio-docker-typescript.svg?style=svg)](https://circleci.com/gh/YOU54F/cypressio-docker-typescript)
 
-This is an example project testing the https://the-internet.herokuapp.com/
+This is an example project testing a few different sites
 
-It showcases the use of 
+It showcases the use of:-
+
 - Typescript
 - The Cypress GUI tool
 - The Cypress command line tool
-- CircleCI integration & slack reporting
-- Mochawesome for fancy reporting
+- Cypress custom commands `cy.foo()`
+- PageObject Models on a Login Site
+- Resuable Web Selectors
+- CircleCI integration
+- Slack reporting
+- Mochawesome for fancy HTML reporting
+- DevTools console log output on test fail
 - Integration with Cypress' Dashboard Service for project recording
-<!-- - Docker to self contain the application and require no pre-requisites on the host machine, bar Docker. -->
+- Docker to self contain the application and require no pre-requisites on the host machine, bar Docker.
 
 ## Installation
 
@@ -22,8 +27,160 @@ It showcases the use of
 
 - Run `cd e2e && npm install` to install cypress in the e2e folder
 - We can slot this into any project easily and isolate its dependencies from your project
+- View the `Makefile` for available commands
 
-## Running tests locally
+### Docker Installation
+
+- Run `make docker-build` in the project 
+- View the `Makefile` for available docker commands
+
+## Configuration
+
+The main cypress configuration file, is in the e2e folder
+
+`cypress.json`
+
+It can contain configuration options applicable to all environments
+
+Environment specific config files are stored in `e2e/config/<environment.json>`
+
+These will override any configurations specific environment vars set in `cypress.json`
+
+these can be set on the command line by
+
+`--env configFile=<environment.json>`
+
+Currently supported environments are
+
+- development
+- production
+- staging
+- qa
+
+If no option is provided is will default to the baseUrl defined in `e2e/config.json`
+
+In order to setup development, you will need a website locally running and your URI_ROOT should be set.
+
+`export URI_ROOT=<your_root_url>`
+
+If you are using docker then please set your URI_ROOT in your docker-compose file, it is set in this example
+
+```
+        environment:
+            - URI_ROOT=http://the-internet.herokuapp.com
+```
+
+If it's not set, and you set `--env configFile=development` the application will error, and ask you to set it.
+
+## Running tests in Docker via Make
+
+- `make docker-build` - Build the image
+- `make docker-test-local` - Run the tests
+- `make docker-bash` - Access the bash shell in the container
+
+For more, see the Makefile
+
+## Running tests locally via Make
+
+- `make test-local` 
+- `make test-qa`
+- `make test-staging` 
+- `make test-production` 
+
+## Direct from the command line
 
 - `npm run cypress:open` - runs test via gui
 - `npm run cypress:run`  - run tests via command line
+
+Provide an env with `--env configFile=<env>`
+
+And the path for the spec files you wish to run `-s '<pathToFile>'` eg `-s 'cypress/integration/examples/theinternet.spec.js'`
+
+### GUI - Any changes made to test files are automatically picked up by the GUI and executed, post file save.
+
+`make test-local-gui` Opens the GUI with the development configuration selection
+
+`make test-qa-gui` 	Opens the GUI with the qa configuration selection
+
+The GUI can be opened by `npx cypress open` but requires a `--env configFile=<env>` option in order to set the correct BaseURL
+
+### Reporting
+
+Videos of each run are stored in `e2e/cypress/videos`
+
+Screenshots of failing tests are stored in `e2e/cypress/screenshots`
+
+Reports of test runs are generated with MochaAwesome are stored in `e2e/cypress/reports`
+
+## Typescript
+
+- Spec (test) files are written as `example.spec.ts` and contained in `e2e/cypress/integration`
+- There is a `tsconfig.json` file in the `e2e` folder
+- - It includes the paths for the `.ts` files. If you add other paths for yours, include them here.
+- - It contains the typescript options and includes the Cypress typings for code completion.
+- - use visual studio code (if you aren't already) - it's free and comes feature packed.
+- There is a `tslint.json` file in the `e2e` folder
+- - Contains some rules for code linting
+- Tests are compiled with webpack typescript pre-processor.
+- - The config file is in `e2e/webpack.config.js`
+- - It is loaded in `e2e/cypress/plugins/index.js`, hooking into cypress's `on` event.
+
+## CircleCI
+
+This project is building in CircleCI and can be viewed at the following link
+
+https://circleci.com/gh/YOU54F/cypressio-docker-typescript
+
+See the `.circleci` folder
+
+- `config.yml` - Contains the CircleCI build configuration
+
+### Slack Reporting
+
+A bash file has been written in order to publish results
+
+- `.circleci/slack-alert.sh`
+
+It provides the following distinct message types
+
+- Build Failure / Cypress error
+- Test Failure
+- Test Success
+
+It provides the following information
+
+- CircleCI Build Status
+- Test Stats (Total Tests / Passes / Failures)
+- Author with link to Github commit
+- Branch name
+- Pull Request number and link to PR (only if PR)
+
+And the following build/test artefacts
+
+- CircleCI Build Log button
+- HTML Test report button (only on build success)
+- Videos of test runs (one link per test)
+- Screenshots of failed tests (one link per failing test)
+
+You will need to set up a couple of things in order to use this.
+
+First build a Slack app & create an incoming webhook
+
+- https://api.slack.com/slack-apps
+
+Set the following environment variable in your localhost or CI configuration
+
+- $SLACK_WEBHOOK_URL - The full URL you created in the last step
+- $SLACK_API_CHANNEL - The channel ref you wish to publish to (right-click on your channel and click copy link, check the link, its the digits after the last / )
+
+### Cypress Dashboard Recording
+
+CircleCI builds pass in a `CYPRESS_RECORD_KEY` in order to publish the results to the Cypress Dashboard.
+
+We run `make test-record` to set the `--record` flag and publish the results to the dashboard.
+
+## TODO
+
+- Mochawesome is used for reporting but provides a single html page per test, currently we only return the first in the slack message. Need to combine these or find another reporter
+- Applitools Integration
+- Convert the slack-alert bash file into to a .ts file (Github thinks this is a shell project - waaaaah) - and add some tests!

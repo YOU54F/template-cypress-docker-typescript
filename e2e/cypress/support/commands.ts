@@ -1,39 +1,95 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This is will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
-
-// add a custom command cy.foo()
-Cypress.Commands.add('foo', () => 'foo')
-
-// see more example of adding custom commands to Cypress TS interface
-// in https://github.com/cypress-io/add-cypress-custom-command-in-typescript
 // add new command to the existing Cypress interface
-// tslint:disable-next-line no-namespace
-declare namespace Cypress {
-  // tslint:disable-next-line interface-name
-  interface Chainable {
-    foo: () => string
+declare global {
+  namespace Cypress {
+    type Greeting = {
+      greeting: string,
+      name: string
+    }
+
+    interface Chainable {
+      /**
+       * Yields "foo"
+       *
+       * @returns {typeof foo}
+       * @memberof Chainable
+       * @example
+       *    cy.foo().then(f = ...) // f is "foo"
+       */
+      foo: typeof foo
+      foo2: typeof foo2
+
+      /**
+       * Yields sum of the arguments.
+       *
+       * @memberof Cypress.Chainable
+       *
+       * @example
+        ```
+        cy.sum(2, 3).should('equal', 5)
+        ```
+       */
+      sum: (a: number, b: number) => Chainable<number>
+
+      /**
+       * Example command that passes an object of arguments.
+       * @memberof Cypress.Chainable
+       * @example
+       ```
+        cy.greeting({ greeting: 'Hello', name: 'Friend' })
+        // or use defaults
+        cy.greeting()
+       ```
+       */
+      greeting: (options?: Greeting) => void
+    }
   }
 }
+
+  /**
+ * An example function "foo()"
+ *
+ * @returns {string} "foo"
+ * @example
+ *    foo() // "foo"
+ */
+export function foo() {
+  return 'foo'
+}
+
+/**
+ * Uses another custom command `cy.foo()` internally.
+ *
+ * @returns {string} "foo"
+ * @example cy.foo() // "foo"
+ */
+export function foo2() {
+  return cy.foo()
+}
+
+/**
+ * Adds two numbers
+ * @example sum(2, 3) // 5
+*/
+export function sum(a: number, b: number): number {
+  return a + b
+}
+
+const defaultGreeting: Cypress.Greeting = {
+  greeting: 'hi',
+  name: 'there'
+}
+
+/**
+ * Prints a custom greeting.
+ * @example printToConsole({ greeting: 'hello', name: 'world' })
+ */
+export const printToConsole = (options = defaultGreeting) => {
+  const {greeting, name} = options
+  console.log(`${greeting}, ${name}`)
+}
+
+// add commands to Cypress like "cy.foo()" and "cy.foo2()"
+Cypress.Commands.add('foo', foo)
+Cypress.Commands.add('foo2', foo2)
+Cypress.Commands.add('sum', sum)
+Cypress.Commands.add('greeting', printToConsole)
