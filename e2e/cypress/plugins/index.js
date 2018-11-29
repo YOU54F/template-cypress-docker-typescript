@@ -6,10 +6,21 @@ const path = require('path')
 
 module.exports = (on,config) => {
   
+  // Load webpack typescript pre processor
   const options = {
     webpackOptions: require('../../webpack.config'),
   }
   on('file:preprocessor', wp(options))
+
+  // Output devtools console log to terminal on failed test
+  // and save in cypress/logs
+  on('task', {
+    failed: require('cypress-failed-log/src/failed')(),
+  })
+
+  // process the configFile option flag and load
+  // a new config file in cypress/config if value matches
+  // default to base cypress.json config
   return processConfig(on, config)
 }
 
