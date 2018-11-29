@@ -52,7 +52,7 @@ export GIT_COMMIT_URL=https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PRO
       fi     
 
 # if no tests, we error and we must send this back to slack instead of a false positive
-      if [ -z "$TOTAL_TESTS" -o -z "$REPORT_LOCATION_JUNIT.xml" ]; then
+      if [ -z "$TOTAL_TESTS" -o "$TOTAL_TESTS" -eq 0 ]; then
             curl -X POST -H 'Content-type: application/json' \
             --data '{"text":"'${CIRCLE_PROJECT_REPONAME}' test build failed.\nThis run was triggered by <'$GIT_COMMIT_URL'|'${CIRCLE_USERNAME}'>'"$pr_link"'","channel":"'$SLACK_API_CHANNEL'",
             "attachments":[{"color":"#ff0000",
