@@ -25,9 +25,9 @@ jobs:
       - run:
           name: Install jq
           command: cd e2e && apt-get install jq
-      - run:
-          name: Sonarqube if Pull Request
-          command: ./.circleci/sonar-scanner-on-pr.sh          
+    #   - run:
+    #       name: Sonarqube if Pull Request
+    #       command: ./.circleci/sonar-scanner-on-pr.sh          
       - run:
           name: Running E2E tests with recording
           when: on_success
