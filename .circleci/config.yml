@@ -16,7 +16,7 @@ jobs:
             - v2-deps-{{ .Branch }}-{{ checksum "e2e/package-lock.json" }}
             - v2-deps-{{ .Branch }}-
             - v2-deps-
-      - run: npm ci
+      - run: cd e2e && npm ci
       - save_cache:
           key: v2-deps-{{ .Branch }}-{{ checksum "e2e/package-lock.json" }}
           paths:
@@ -24,7 +24,7 @@ jobs:
             - ~/.cache
       - run:
           name: Install jq
-          command: apt-get install jq
+          command: cd e2e && apt-get install jq
       - run:
           name: Sonarqube if Pull Request
           command: ./.circleci/sonar-scanner-on-pr.sh          
