@@ -4,3 +4,5 @@ screenshots
 .env
 reports
 logs
+mochareports
+.DS_STORE
