@@ -104,11 +104,11 @@ The GUI can be opened by `npx cypress open` but requires a `--env configFile=<en
 
 ### Reporting
 
-Videos of each run are stored in `e2e/cypress/videos`
-
-Screenshots of failing tests are stored in `e2e/cypress/screenshots`
-
-Reports of test runs are generated with MochaAwesome are stored in `e2e/cypress/reports`
+- Videos of each run are stored in `e2e/cypress/videos`
+- Screenshots of failing tests are stored in `e2e/cypress/screenshots`
+- HTML Reports of test runs are generated with MochaAwesome are stored in `e2e/cypress/reports`
+- One report is generated per spec file
+- A report bundler is provided which will process each report in `e2e/cypress/reports` and combine them into a single HTML document with a random uuid title in `e2e/mochareports`
 
 ## Typescript
 
@@ -179,6 +179,6 @@ We run `make test-record` to set the `--record` flag and publish the results to 
 
 ## TODO
 
-- Mochawesome is used for reporting but provides a single html page per test, currently we only return the first in the slack message. Need to combine these or find another reporter
 - Applitools Integration
 - Convert the slack-alert bash file into to a .ts file (Github thinks this is a shell project - waaaaah) - and add some tests!
+- publish to s3 bucket needs error handling, should exit each function gracefully if the directories are empty
