@@ -3,9 +3,9 @@ DOCKERRUNCMD=docker-compose run --rm $(DOCKERIMGNAME)
 CYPRESSRUNCMD=npx cypress run
 CYPRESSGUICMD=npx cypress open
 
-combine-reports:
+reports-combine-publish-s3:
 	node scripts/generate-reports.js
-	
+
 test:
 	$(CYPRESSRUNCMD)
 	

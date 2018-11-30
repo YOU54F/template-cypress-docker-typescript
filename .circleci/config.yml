@@ -28,11 +28,15 @@ jobs:
       - run:
           name: Running E2E tests with recording
           when: on_success
-          command: cd e2e && make test-record        
+          command: cd e2e && make test-record  
+      - run:
+          name: Combine MochaAwesome Reports & publish to AWS
+          when: always
+          command: cd e2e && make reports-combine-publish-s3       
       - store_test_results:
           path: e2e/cypress/reports
       - store_artifacts:
-          path: e2e/cypress/reports
+          path: e2e/reports/mochawesome
       - store_artifacts:
           path: e2e/cypress/videos
       - store_artifacts:
