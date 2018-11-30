@@ -36,7 +36,7 @@ jobs:
       - store_test_results:
           path: e2e/cypress/reports
       - store_artifacts:
-          path: e2e/reports/mochareports
+          path: e2e/mochareports
       - store_artifacts:
           path: e2e/cypress/videos
       - store_artifacts:
