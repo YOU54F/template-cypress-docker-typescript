@@ -13,17 +13,19 @@
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "^4.0.2",
+    "aws-sdk": "^2.286.2",
+    "cypress": "^3.1.2",
+    "cypress-failed-log": "^2.4.0",
     "mocha": "^5.2.0",
     "mocha-junit-reporter": "^1.18.0",
     "mocha-multi-reporters": "^1.1.7",
     "mochawesome": "^3.1.1",
+    "rimraf": "^2.6.2",
+    "shelljs": "^0.8.2",
     "sonarqube-scanner": "^2.1.2",
     "ts-loader": "^5.3.1",
     "typescript": "^3.1.6",
+    "uuid": "^3.3.2",
     "webpack": "^4.26.1"
-  },
-  "devDependencies": {
-    "cypress": "^3.1.2",
-    "cypress-failed-log": "^2.4.0"
   }
 }

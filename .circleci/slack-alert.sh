@@ -1,14 +1,15 @@
-export REPORT_LOCATION=~/app/e2e/cypress/reports/mocha/mochawesome    
+export REPORT_LOCATION=~/app/e2e/mochareports
 export REPORT_LOCATION_JUNIT=~/app/e2e/cypress/reports/junit    
 export VIDEO_LOCATION=~/app/e2e/cypress/videos/ 
 export SCREENSHOT_LOCATION=~/app/e2e/cypress/screenshots/ 
 export REPORT_ARTEFACT_URL=https://circleci.com/api/v1.1/project/github/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts/0
 export REPORT_ARTEFACT_LOCATION=${REPORT_ARTEFACT_URL}${REPORT_LOCATION}.html
 export VIDEO_ARTEFACT_LOCATION=${REPORT_ARTEFACT_URL}${VIDEO_LOCATION}
-
-
 export GIT_COMMIT_URL=https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/commit/${CIRCLE_SHA1}
 
+      for reportHTML in $REPORT_LOCATION/*.html; do
+            REPORT_HTML_ARTEFACT_LOCATION=${REPORT_ARTEFACT_URL}$reportHTML
+       done
 
       for report in $REPORT_LOCATION_JUNIT/*.xml; do
             totalSuiteTestsFailing=$(cat $report | egrep -o 'failures="[^.]' -m1 | cut -d \" -f2)
@@ -55,7 +56,7 @@ export GIT_COMMIT_URL=https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PRO
       if [ -z "$TOTAL_TESTS" -o "$TOTAL_TESTS" -eq 0 ]; then
             curl -X POST -H 'Content-type: application/json' \
             --data '{"text":"'${CIRCLE_PROJECT_REPONAME}' test build failed.\nThis run was triggered by <'$GIT_COMMIT_URL'|'${CIRCLE_USERNAME}'>'"$pr_link"'","channel":"'$SLACK_API_CHANNEL'",
-            "attachments":[{"color":"#ff0000",
+            "attachments":[{"color":"#ff0000","fallback":"Build Log available at '${CIRCLE_BUILD_URL}'",
             "title":"There was a build error, see logs for details",
             "text":"Environment: '${CIRCLE_BRANCH}'",
             "actions":[{"type":"button","text":"CircleCI Logs","url":"'${CIRCLE_BUILD_URL}'","style":"danger"}]}]}' \
@@ -64,10 +65,10 @@ export GIT_COMMIT_URL=https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PRO
       elif [ $TOTAL_TESTS_FAILING -gt 0 -o $TOTAL_TESTS_PASSING -eq 0 ]; then
             curl -X POST -H 'Content-type: application/json' \
             --data '{"text":"'${CIRCLE_PROJECT_REPONAME}' test run failed.\nThis run was triggered by <'$GIT_COMMIT_URL'|'${CIRCLE_USERNAME}'>'"$pr_link"'","channel":"'$SLACK_API_CHANNEL'",
-            "attachments":[{"color":"#ff0000","fallback":"Report available at '$REPORT_ARTEFACT_LOCATION'",
+            "attachments":[{"color":"#ff0000","fallback":"Report available at '$REPORT_HTML_ARTEFACT_LOCATION'",
             "title":"Total Failed: '$TOTAL_TESTS_FAILING'",
             "text":"Environment: '${CIRCLE_BRANCH}'\nTotal Tests: '$TOTAL_TESTS'\nTotal Passing: '$TOTAL_TESTS_PASSING'",
-            "actions":[{"type":"button","text":"Test Report","url":"'$REPORT_ARTEFACT_LOCATION'","style":"primary"},
+            "actions":[{"type":"button","text":"Test Report","url":"'$REPORT_HTML_ARTEFACT_LOCATION'","style":"primary"},
             {"type":"button","text":"CircleCI Logs","url":"'${CIRCLE_BUILD_URL}'","style":"primary"}]},
             {"text":"'"$video_attachments_slack$screenshot_attachments_slack"'","color":"#ff0000"}]}' \
             $SLACK_WEBHOOK_URL 
@@ -75,9 +76,9 @@ export GIT_COMMIT_URL=https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PRO
       elif [ $TOTAL_TESTS_FAILING -eq 0 ]; then
             curl -X POST -H 'Content-type: application/json' \
             --data '{"text":"'${CIRCLE_PROJECT_REPONAME}' test run passed.\nThis run was triggered by <'$GIT_COMMIT_URL'|'${CIRCLE_USERNAME}'>'"$pr_link"'","channel":"'$SLACK_API_CHANNEL'",
-            "attachments":[{"color":"#36a64f","fallback":"Report available at '$REPORT_ARTEFACT_LOCATION'",
+            "attachments":[{"color":"#36a64f","fallback":"Report available at '$REPORT_HTML_ARTEFACT_LOCATION'",
             "text":"Environment: '${CIRCLE_BRANCH}'\nTotal Passed: '$TOTAL_TESTS_PASSING'",
-            "actions":[{"type":"button","text":"Test Report","url":"'$REPORT_ARTEFACT_LOCATION'","style":"primary"},
+            "actions":[{"type":"button","text":"Test Report","url":"'$REPORT_HTML_ARTEFACT_LOCATION'","style":"primary"},
             {"type":"button","text":"CircleCI Logs","url":"'${CIRCLE_BUILD_URL}'","style":"primary"}]},
             {"text":"'"$video_attachments_slack$screenshot_attachments_slack"'","color":"#36a64f"}]}' \
             $SLACK_WEBHOOK_URL     
