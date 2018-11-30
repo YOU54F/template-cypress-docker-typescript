@@ -17,9 +17,9 @@ const combine = require('./combine.js');
     shell.exec(`./node_modules/.bin/marge ${uuid}.json  --reportDir mochareports`, (code, stdout, stderr) => {
       if (stderr) throw stderr;
       // upload to s3
-      upload.uploadScreenshots();
-      upload.uploadVideos();
-      upload.uploadMochaAwesome();
+      // upload.uploadScreenshots();
+      // upload.uploadVideos();
+      // upload.uploadMochaAwesome();
       // cleanup
       rimraf(path.join(__dirname, '..', 'cypress/reports/mocha'), () => {});
       rimraf(path.join(__dirname, '..', `${uuid}.json`), () => {});
