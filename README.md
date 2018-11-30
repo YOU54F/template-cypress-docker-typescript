@@ -65,7 +65,7 @@ In order to setup development, you will need a website locally running and your 
 
 If you are using docker then please set your URI_ROOT in your docker-compose file, it is set in this example
 
-```
+```yaml
         environment:
             - URI_ROOT=http://the-internet.herokuapp.com
 ```
@@ -109,6 +109,16 @@ The GUI can be opened by `npx cypress open` but requires a `--env configFile=<en
 - HTML Reports of test runs are generated with MochaAwesome are stored in `e2e/cypress/reports`
 - One report is generated per spec file
 - A report bundler is provided which will process each report in `e2e/cypress/reports` and combine them into a single HTML document with a random uuid title in `e2e/mochareports`
+- The report bundler can be run with `make combine-reports`
+- It can be published to an AWS S3 bucket with `make publish-reports-s3`
+- To publish to a bucket, set the following env vars
+
+```sh
+ export BUCKET_NAME=<YOUR_BUCKET_NAME>
+ export AWS_ACCESS_ID=<YOUR_AWS_ACCESS_ID>
+ export AWS_SECRET_KEY=<YOUR_AWS_SECRET_KEY>
+```
+
 
 ## Typescript
 

@@ -20,10 +20,8 @@ function uploadToS3(file, name, type) {
   };
   s3bucket.upload(params, (err, data) => {
     if (err) throw err;
-    /* eslint-disable no-console */
     console.log('Success!');
     console.log(data);
-    /* eslint-enable no-console */
   });
 }
 
