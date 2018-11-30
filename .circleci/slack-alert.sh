@@ -67,7 +67,6 @@ export GIT_COMMIT_URL=https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PRO
             --data '{"text":"'${CIRCLE_PROJECT_REPONAME}' test run failed.\nThis run was triggered by <'$GIT_COMMIT_URL'|'${CIRCLE_USERNAME}'>'"$pr_link"'","channel":"'$SLACK_API_CHANNEL'",
             "attachments":[{"color":"#ff0000","fallback":"Report available at '$REPORT_HTML_ARTEFACT_LOCATION'",
             "title":"Total Failed: '$TOTAL_TESTS_FAILING'",
-            "footer":"'"$video_attachments_slack$screenshot_attachments_slack"'",
             "text":"Environment: '${CIRCLE_BRANCH}'\nTotal Tests: '$TOTAL_TESTS'\nTotal Passing: '$TOTAL_TESTS_PASSING'",
             "actions":[{"type":"button","text":"Test Report","url":"'$REPORT_HTML_ARTEFACT_LOCATION'","style":"primary"},
             {"type":"button","text":"CircleCI Logs","url":"'${CIRCLE_BUILD_URL}'","style":"primary"}]},
@@ -79,7 +78,6 @@ export GIT_COMMIT_URL=https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PRO
             --data '{"text":"'${CIRCLE_PROJECT_REPONAME}' test run passed.\nThis run was triggered by <'$GIT_COMMIT_URL'|'${CIRCLE_USERNAME}'>'"$pr_link"'","channel":"'$SLACK_API_CHANNEL'",
             "attachments":[{"color":"#36a64f","fallback":"Report available at '$REPORT_HTML_ARTEFACT_LOCATION'",
             "text":"Environment: '${CIRCLE_BRANCH}'\nTotal Passed: '$TOTAL_TESTS_PASSING'",
-            "footer":"'"$video_attachments_slack$screenshot_attachments_slack"'",
             "actions":[{"type":"button","text":"Test Report","url":"'$REPORT_HTML_ARTEFACT_LOCATION'","style":"primary"},
             {"type":"button","text":"CircleCI Logs","url":"'${CIRCLE_BUILD_URL}'","style":"primary"}]},
             {"text":"'"$video_attachments_slack$screenshot_attachments_slack"'","color":"#36a64f"}]}' \
