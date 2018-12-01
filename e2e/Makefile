@@ -6,6 +6,9 @@ CYPRESSGUICMD=npx cypress open
 combine-reports:
 	node scripts/generate-reports.js
 
+slack-alert:
+	node scripts/slack/slack-alert.js
+	
 test:
 	$(CYPRESSRUNCMD)
 	
