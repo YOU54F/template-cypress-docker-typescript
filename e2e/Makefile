@@ -3,12 +3,6 @@ DOCKERRUNCMD=docker-compose run --rm $(DOCKERIMGNAME)
 CYPRESSRUNCMD=npx cypress run
 CYPRESSGUICMD=npx cypress open
 
-combine-reports:
-	node scripts/generate-reports.js
-
-slack-alert:
-	node scripts/slack/slack-alert.js
-	
 test:
 	$(CYPRESSRUNCMD)
 	
@@ -35,6 +29,12 @@ test-qa-gui:
 
 test-record:
 	$(CYPRESSRUNCMD) --record
+
+combine-reports:
+	node scripts/generate-reports.js
+
+slack-alert:
+	node scripts/slack/slack-alert.js
 
 docker-build:
 	docker build . -t $(DOCKERIMGNAME)

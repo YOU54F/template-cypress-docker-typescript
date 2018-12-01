@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Slack Custom Reporting
           when: always
-          command: ./.circleci/slack-alert.sh
+          command: cd e2e && make slack-alert 
 
 workflows:
   build-test:
