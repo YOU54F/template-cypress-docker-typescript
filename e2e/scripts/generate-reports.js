@@ -11,5 +11,4 @@ combine.writeReport(data, uuid);
 rimraf(path.join(__dirname, '..', 'cypress/reports/mocha'), () => {});
 shell.exec(`./node_modules/.bin/marge ${uuid}.json  --reportDir mochareports`, (code, stdout, stderr) => {
   if (stderr) throw stderr;
-  rimraf(path.join(__dirname, '..', `${uuid}.json`), () => {});
 });
