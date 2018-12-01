@@ -118,4 +118,5 @@ function writeReport(obj, uuid) {
 module.exports = {
   combineMochaAwesomeReports,
   writeReport,
+  getFiles
 };
