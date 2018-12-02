@@ -9,6 +9,6 @@ const data = combine.combineMochaAwesomeReports();
 const uuid = uuidv1();
 combine.writeReport(data, uuid);
 // rimraf(path.join(__dirname, '..', 'cypress/reports/mocha'), () => {});
-// shell.exec(`./node_modules/.bin/marge mochareports/${uuid}.json  --reportDir mochareports`, (code, stdout, stderr) => {
-//   if (stderr) throw stderr;
-// });
+shell.exec(`./node_modules/.bin/marge mochareports/${uuid}.json  --reportDir mochareports`, (code, stdout, stderr) => {
+  if (stderr) throw stderr;
+});
