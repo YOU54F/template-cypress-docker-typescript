@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "^4.0.2",
+    "@slack/client": "^4.8.0",
     "aws-sdk": "^2.286.2",
     "cypress": "^3.1.2",
     "cypress-failed-log": "^2.4.0",

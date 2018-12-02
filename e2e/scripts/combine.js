@@ -82,7 +82,7 @@ function getPercentClass(pct) {
 
 function writeReport(obj, uuid) {
   const sampleFile = path.join(__dirname, 'sample.json');
-  const outFile = path.join(__dirname, '..', `${uuid}.json`);
+  const outFile = path.join(__dirname, '..', 'mochareports',`${uuid}.json`);
   fs.readFile(sampleFile, 'utf8', (err, data) => {
     if (err) throw err;
     const parsedSampleFile = JSON.parse(data);
@@ -118,4 +118,5 @@ function writeReport(obj, uuid) {
 module.exports = {
   combineMochaAwesomeReports,
   writeReport,
+  getFiles
 };

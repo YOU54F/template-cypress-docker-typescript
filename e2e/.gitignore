@@ -1,8 +1,5 @@
 node_modules
-videos
-screenshots
 .env
-reports
 logs
-mochareports
 .DS_STORE
+.scannerwork

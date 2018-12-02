@@ -7,8 +7,6 @@
     "types": ["cypress"]
   },
   "include": [
-    "cypress/*/*.ts",
-    "cypress/*/*/*.ts",
-    "cypress/*/*/*/*.ts"
+    "cypress/**/*.ts"
   ]
 }
