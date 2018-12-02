@@ -22,23 +22,39 @@ const CIRCLE_BUILD_URL = process.env.CIRCLE_BUILD_URL
 const CIRCLE_BUILD_NUM = process.env.CIRCLE_BUILD_NUM
 // const VIDEO_LOCATION = "~/app/e2e/cypress/videos/"
 // const SCREENSHOT_LOCATION = "~/app/e2e/cypress/screenshots/"
-const video_attachments_slack = 'video_attachments_slack'
+// const video_attachments_slack = 'video_attachments_slack'
+let video_attachments_slack=''
 const screenshot_attachments_slack = 'screenshot_attachments_slack'
-const VCS_ROOT='github' //change to bitbucket, if circleci project hosted on bitbucket
-const VCS_BASEURL_GITHUB='https://github.com'
-const VCS_BASEURL_BITBUCKET='https://github.com'
+const VCS_ROOT = 'github' //change to bitbucket, if circleci project hosted on bitbucket
+const VCS_BASEURL_GITHUB = 'https://github.com'
+const VCS_BASEURL_BITBUCKET = 'https://github.com'
 const REPORT_ARTEFACT_URL = `https://circleci.com/api/v1.1/project/${VCS_ROOT}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts/0`
 const GIT_COMMIT_URL = `${VCS_BASEURL_GITHUB}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/commit/${CIRCLE_SHA1}`
 const BITBUCKET_COMMIT_URL = `${VCS_BASEURL_BITBUCKET}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/commits/${CIRCLE_SHA1}`
 const reportHTMLUrl = (REPORT_ARTEFACT_URL + reportHTML)
 
 // need to process video and screenshot links and add into message
+// trimmed_video_filename=$(echo $v | sed 's#.*/##' )       
+
+
+// console.log(video_attachments_slack)
+function getVideoLinks() {
+    const videosDir = path.join(__dirname, '../..', 'cypress', 'videos');
+    const videos = combine.getFiles(videosDir, '.mp4', []);
+    console.log(videos)
+    videos.forEach((videoObject) => {
+    console.log(videoObject)
+    video_attachments_slack = `<${REPORT_ARTEFACT_URL}${videoObject}|Video:- $trimmed_video_filename>\n${video_attachments_slack}`
+    });
+}
+
 // need to provide the PR details, if PR
 
 
 messageSelector();
 
 function messageSelector() {
+    getVideoLinks();
     if (TOTAL_TESTS === undefined || TOTAL_TESTS === 0) {
         status = 'error'
         post = postDataBuildError()
