@@ -4,6 +4,6 @@ screenshots
 .env
 reports
 logs
-mochareports
+mochareports/*
 .DS_STORE
 .scannerwork
