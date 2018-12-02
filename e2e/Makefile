@@ -30,7 +30,7 @@ test-qa-gui:
 test-record:
 	$(CYPRESSRUNCMD) --record
 
-test-parallel:
+test-record-parallel:
 	$(CYPRESSRUNCMD) --record --parallel
 
 combine-reports:
