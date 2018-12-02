@@ -53,17 +53,20 @@ function getTestReportStatus() {
 }
 
 function messageSelector() {
-    getVideoLinks(); // 
-    getScreenshotLinks();
+
     prChecker();
     if (reportStats.totalTests === undefined || reportStats.totalTests === 0) {
         status = 'error'
         post = postDataBuildError()
     } else if (reportStats.totalFailures > 0 || reportStats.totalPasses === 0) {
         status = 'failed'
+        getVideoLinks(); 
+        getScreenshotLinks();
         post = postDataTestsFailure()
     } else if (reportStats.totalFailures === 0) {
         status = 'passed'
+        getVideoLinks(); 
+        getScreenshotLinks();
         post = postDataTestsPassed()
     }
     sendMessage(post)
