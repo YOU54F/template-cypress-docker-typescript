@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Running E2E tests with recording
           when: on_success
-          command: cd e2e && make test-record  
+          command: cd e2e && make test-record-parallel
       - run:
           name: Combine MochaAwesome Reports
           when: always

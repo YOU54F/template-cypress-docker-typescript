@@ -30,6 +30,9 @@ test-qa-gui:
 test-record:
 	$(CYPRESSRUNCMD) --record
 
+test-parallel:
+	$(CYPRESSRUNCMD) --record --parallel
+
 combine-reports:
 	node scripts/generate-reports.js
 
