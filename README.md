@@ -83,10 +83,10 @@ For more, see the Makefile
 
 ## Running tests locally via Make
 
-- `make test-local` 
+- `make test-local`
 - `make test-qa`
-- `make test-staging` 
-- `make test-production` 
+- `make test-staging`
+- `make test-production`
 
 ## Direct from the command line
 
@@ -146,9 +146,9 @@ See the `.circleci` folder
 
 ### Slack Reporting
 
-A bash file has been written in order to publish results
+A JS file has been written in order to publish results
 
-- `.circleci/slack-alert.sh`
+- `e2e/scripts/slack/slack-alert.js`
 
 It provides the following distinct message types
 
@@ -177,7 +177,7 @@ First build a Slack app & create an incoming webhook
 
 - https://api.slack.com/slack-apps
 
-Set the following environment variable in your localhost or CI configuration
+Set the following environment variables in your localhost or CI configuration
 
 - `$SLACK_WEBHOOK_URL` - The full URL you created in the last step
 - `$SLACK_API_CHANNEL` - The channel ref you wish to publish to (right-click on your channel and click copy link, check the link, its the digits after the last / )
