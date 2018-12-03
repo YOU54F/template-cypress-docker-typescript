@@ -91,7 +91,7 @@ function getScreenshotLinks() {
     const screenshots = combine.getFiles(screenshotDir, '.png', []);
     screenshots.forEach((screenshotObject) => {
         trimmed_screenshot_filename = path.basename(screenshotObject)
-        screenshots_attachments_slack = `<${REPORT_ARTEFACT_URL}${screenshotObject}|Video:- ${trimmed_screenshot_filename}>\n${screenshots_attachments_slack}`
+        screenshot_attachments_slack = `<${REPORT_ARTEFACT_URL}${screenshotObject}|Screenshot:- ${trimmed_screenshot_filename}>\n${screenshot_attachments_slack}`
     });
 }
 

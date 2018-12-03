@@ -7,7 +7,7 @@ function getFiles(dir, ext, fileList = []) {
   files.forEach((file) => {
     const filePath = `${dir}/${file}`;
     if (fs.statSync(filePath).isDirectory()) {
-      getFiles(filePath, fileList);
+      getFiles(filePath, ext, fileList);
     } else if (path.extname(file) === ext) {
       fileList.push(filePath);
     }
