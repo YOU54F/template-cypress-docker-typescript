@@ -4,9 +4,6 @@
     "target": "es5",
     "module": "commonjs",
     "skipLibCheck": true,
-    "types": ["cypress"]
-  },
-  "include": [
-    "cypress/**/*.ts"
-  ]
+    "types": ["cypress", "cypress-testing-library", "node"],
+  }
 }

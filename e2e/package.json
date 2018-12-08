@@ -4,16 +4,22 @@
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "Yousaf Nabi",
   "license": "ISC",
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:record": "cypress run --record"
+    "cypress:record": "cypress run --record",
+    "test:cypress:serve": "serve --listen 13370 ./cypress/fixtures/test-app",
+    "test:cypress:run": "wait-port --timeout 10000 localhost:13370 && cypress run",
+    "test:cypress:open": "wait-port --timeout 10000 localhost:13370 && cypress open",
+    "test:cypress:dev": "npm-run-all --silent --parallel --race test:cypress:serve test:cypress:open",
+    "test:cypress": "npm-run-all --silent --parallel --race test:cypress:serve test:cypress:run"
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "^4.0.2",
     "@slack/client": "^4.8.0",
+    "@types/node": "^10.12.11",
     "aws-sdk": "^2.286.2",
     "cypress": "^3.1.2",
     "cypress-failed-log": "^2.4.0",
@@ -24,8 +30,18 @@
     "shelljs": "^0.8.2",
     "sonarqube-scanner": "^2.1.2",
     "ts-loader": "^5.3.1",
-    "typescript": "^3.1.6",
+    "typescript": "^3.3.0-dev.20181207",
     "uuid": "^3.3.2",
     "webpack": "^4.26.1"
+  },
+  "devDependencies": {
+    "cypress-testing-library": "^2.3.4",
+    "npm-run-all": "^4.1.2",
+    "serve": "^10.0.0",
+    "wait-port": "^0.2.2",
+    "cypress-cucumber-preprocessor": "^1.8.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false
   }
 }

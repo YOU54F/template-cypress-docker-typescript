@@ -24,11 +24,11 @@ jobs:
             - ~/.cache
       - run:
           name: Install jq
-          command: cd e2e && apt-get install jq         
+          command: cd e2e && apt-get install jq xsel       
       - run:
-          name: Running E2E tests with recording
+          name: Running E2E tests
           when: on_success
-          command: cd e2e && make test-record  
+          command: cd e2e && npm run test:cypress 
       - run:
           name: Combine MochaAwesome Reports
           when: always

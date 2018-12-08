@@ -1,5 +1,5 @@
 
-import { login } from '../support/pageObjects/login.page'; 
+import { login } from '../../../../support/pageObjects/login.page'; 
 
 describe('Logging In - HTML Web Form - The Internet', () => {
   context('Unauthorized', () => {

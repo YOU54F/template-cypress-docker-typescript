@@ -3,6 +3,10 @@ const path = require('path');
 
 
 function getFiles(dir, ext, fileList = []) {
+  if (!fs.existsSync(dir))
+      {
+        fs.mkdirSync(dir);
+      }
   const files = fs.readdirSync(dir);
   files.forEach((file) => {
     const filePath = `${dir}/${file}`;
@@ -15,7 +19,7 @@ function getFiles(dir, ext, fileList = []) {
   return fileList;
 }
 
-function traverseAndModifyTimedOut (target, deep) {
+function traverseAndModifyTimedOut(target, deep) {
   if (target['tests'] && target['tests'].length) {
     target['tests'].forEach(test => {
       test.timedOut = false;
@@ -43,8 +47,12 @@ function combineMochaAwesomeReports() {
   reports.forEach((report, idx) => {
     const rawdata = fs.readFileSync(report);
     const parsedData = JSON.parse(rawdata);
-    if (idx === 0) { startTime = parsedData.stats.start; }
-    if (idx === (reports.length - 1)) { endTime = parsedData.stats.end; }
+    if (idx === 0) {
+      startTime = parsedData.stats.start;
+    }
+    if (idx === (reports.length - 1)) {
+      endTime = parsedData.stats.end;
+    }
     totalSuites += parseInt(parsedData.stats.suites, 10);
     totalskipped += parseInt(parsedData.stats.skipped, 10);
     totalPasses += parseInt(parsedData.stats.passes, 10);
@@ -82,7 +90,7 @@ function getPercentClass(pct) {
 
 function writeReport(obj, uuid) {
   const sampleFile = path.join(__dirname, 'sample.json');
-  const outFile = path.join(__dirname, '..', 'mochareports',`${uuid}.json`);
+  const outFile = path.join(__dirname, '..', 'mochareports', `${uuid}.json`);
   fs.readFile(sampleFile, 'utf8', (err, data) => {
     if (err) throw err;
     const parsedSampleFile = JSON.parse(data);
@@ -94,10 +102,10 @@ function writeReport(obj, uuid) {
     stats.pending = obj.totalPending;
     stats.start = obj.startTime;
     stats.end = obj.endTime;
-    stats.duration =  new Date(obj.endTime) - new Date(obj.startTime);
+    stats.duration = new Date(obj.endTime) - new Date(obj.startTime);
     stats.testsRegistered = obj.totalTests - obj.totalPending;
     stats.passPercent = Math.round((stats.passes / (stats.testsRegistered - stats.pending)) * 1000) / 10;
-    stats.pendingPercent = Math.round((stats.pending / stats.testsRegistered) * 1000) /10;
+    stats.pendingPercent = Math.round((stats.pending / stats.testsRegistered) * 1000) / 10;
     stats.skipped = obj.totalskipped;
     stats.hasSkipped = obj.totalskipped > 0;
     stats.passPercentClass = getPercentClass(stats.passPercent);
@@ -109,7 +117,9 @@ function writeReport(obj, uuid) {
 
     parsedSampleFile.suites.suites = obj.suites;
     parsedSampleFile.suites.uuid = uuid;
-    fs.writeFile(outFile, JSON.stringify(parsedSampleFile), { flag: 'wx' }, (error) => {
+    fs.writeFile(outFile, JSON.stringify(parsedSampleFile), {
+      flag: 'wx'
+    }, (error) => {
       if (error) throw error;
     });
   });

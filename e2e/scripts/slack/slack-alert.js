@@ -4,30 +4,35 @@ const combine = require('../combine.js');
 const {
     IncomingWebhook
 } = require('@slack/client');
-const url = process.env.SLACK_WEBHOOK_URL;
-const SLACK_API_CHANNEL = process.env.SLACK_API_CHANNEL
-const webhook = new IncomingWebhook(url);
-const CIRCLE_SHA1 = process.env.CIRCLE_SHA1
-const CIRCLE_BRANCH = process.env.CIRCLE_BRANCH
-const CIRCLE_USERNAME = process.env.CIRCLE_USERNAME
-const CIRCLE_BUILD_URL = process.env.CIRCLE_BUILD_URL
-const CIRCLE_BUILD_NUM = process.env.CIRCLE_BUILD_NUM
-const CIRCLE_PULL_REQUEST = process.env.CIRCLE_PULL_REQUEST
-const CIRCLE_PROJECT_REPONAME = process.env.CIRCLE_PROJECT_REPONAME;
-const CIRCLE_PROJECT_USERNAME = process.env.CIRCLE_PROJECT_USERNAME
+const {
+    SLACK_API_CHANNEL,
+    SLACK_WEBHOOK_URL
+} = process.env;
+const webhook = new IncomingWebhook(SLACK_WEBHOOK_URL);
+const {
+    CIRCLE_SHA1,
+    CIRCLE_BRANCH,
+    CIRCLE_USERNAME,
+    CIRCLE_BUILD_URL,
+    CIRCLE_BUILD_NUM,
+    CIRCLE_PULL_REQUEST,
+    CIRCLE_PROJECT_REPONAME,
+    CIRCLE_PROJECT_USERNAME
+} = process.env;
 const VCS_ROOT = 'github' //change to bitbucket, if circleci project hosted on bitbucket
 const VCS_BASEURL_GITHUB = 'https://github.com'
 const VCS_BASEURL_BITBUCKET = 'https://bitbucket.org'
+const CIRCLE_URL = 'https://circleci.com/api/v1.1/project'
 const GIT_COMMIT_URL = `${VCS_BASEURL_GITHUB}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/commit/${CIRCLE_SHA1}`
 const BITBUCKET_COMMIT_URL = `${VCS_BASEURL_BITBUCKET}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/commits/${CIRCLE_SHA1}`
-const REPORT_ARTEFACT_URL = `https://circleci.com/api/v1.1/project/${VCS_ROOT}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts/0`
+const REPORT_ARTEFACT_URL = `${CIRCLE_URL}/${VCS_ROOT}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts/0`
 var pr_link = ''
 var video_attachments_slack = ''
 var screenshot_attachments_slack = ''
 const reportStats = getTestReportStatus() // process the test report
 const reportHTMLUrl = (REPORT_ARTEFACT_URL + reportHTML)
 
-messageSelector();
+messageSelector(); // decide which message 
 
 function getTestReportStatus() {
     const reportDir = path.join(__dirname, '..', '..', 'mochareports');
@@ -47,8 +52,7 @@ function getTestReportStatus() {
         totalPasses,
         totalFailures,
         totalDuration,
-        reportFile,
-        reportHTML
+        reportFile
     };
 }
 
