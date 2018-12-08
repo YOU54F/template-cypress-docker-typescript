@@ -1,8 +1,5 @@
 import { Given, Then, When } from "cypress-cucumber-preprocessor/steps";
-
-const {
-  shouldProceedCurrentStep
-} = require("cypress-cucumber-preprocessor/tagsHelper"); // eslint-disable-line
+import { shouldProceedCurrentStep } from "cypress-cucumber-preprocessor/lib/tagsHelper";
 
 let parsedTags: string;
 

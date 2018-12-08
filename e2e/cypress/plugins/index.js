@@ -12,11 +12,11 @@ module.exports = (on,config) => {
   }
   on('file:preprocessor', wp(options))
 
-  // Output devtools console log to terminal on failed test
-  // and save in cypress/logs
-  on('task', {
-    failed: require('cypress-failed-log/src/failed')(),
-  })
+  // // Output devtools console log to terminal on failed test
+  // // and save in cypress/logs
+  // on('task', {
+  //   failed: require('cypress-failed-log/src/failed')(),
+  // })
 
   // process the configFile option flag and load
   // a new config file in cypress/config if value matches

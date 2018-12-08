@@ -15,7 +15,7 @@
 
 // Import commands.ts
 import './commands'
-import 'cypress-failed-log'
+// import 'cypress-failed-log'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

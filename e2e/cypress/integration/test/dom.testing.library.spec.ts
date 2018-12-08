@@ -1,6 +1,6 @@
 describe('dom-testing-library commands', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('http://localhost:13370')
   })
   it('getByPlaceholderText', () => {
     cy.getByPlaceholderText('Placeholder Text')
