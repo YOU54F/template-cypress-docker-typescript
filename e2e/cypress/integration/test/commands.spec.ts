@@ -1,4 +1,4 @@
-import { add } from '../support/helpers/add'
+import { add } from '../../support/helpers/add'
 
 describe('Testing Global Namespace Commands.ts', () => {
   it('works', () => {

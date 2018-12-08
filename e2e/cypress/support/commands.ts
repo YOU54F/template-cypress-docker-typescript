@@ -1,10 +1,15 @@
 // add new command to the existing Cypress interface
+import 'cypress-testing-library/add-commands';
+
+
 declare global {
   namespace Cypress {
     type Greeting = {
       greeting: string,
       name: string
     }
+
+    
 
     interface Chainable {
       /**
