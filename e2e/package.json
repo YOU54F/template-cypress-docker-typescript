@@ -27,6 +27,7 @@
     "mocha-junit-reporter": "^1.18.0",
     "mocha-multi-reporters": "^1.1.7",
     "mochawesome": "^3.1.1",
+    "serenity-js": "^1.10.13",
     "shelljs": "^0.8.2",
     "sonarqube-scanner": "^2.1.2",
     "ts-loader": "^5.3.1",
@@ -37,12 +38,17 @@
   "devDependencies": {
     "cypress-cucumber-preprocessor": "1.9.1",
     "cypress-page-object": "^1.0.0",
+    "cypress-serenity-reporter": "^1.0.1",
     "cypress-testing-library": "2.3.4",
     "npm-run-all": "4.1.5",
+    "serenity-cli": "^0.11.1",
     "serve": "10.1.1",
     "wait-port": "0.2.2"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false
-  }
+  },
+  "cypress-serenity-reporter": {
+    "outputDirectory": "target/site/bob/"
+}
 }

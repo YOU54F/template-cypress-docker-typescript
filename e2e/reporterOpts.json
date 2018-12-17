@@ -1,5 +1,5 @@
 {
-  "reporterEnabled": "mocha-junit-reporter, mochawesome",
+  "reporterEnabled": "mocha-junit-reporter, mochawesome, cypress-serenity-reporter, mocha",
   "mochaJunitReporterReporterOptions": {
     "mochaFile": "cypress/reports/junit/test_results[hash].xml",
     "toConsole": false
@@ -8,5 +8,9 @@
     "reportDir": "cypress/reports/mocha",
     "quiet": true,
     "overwrite": false
+  },
+  "mochaReporterOptions": {
+    "reportsShowStepDetails": true,
+    "ui": "tdd"
   }
 }
