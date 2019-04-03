@@ -33,19 +33,20 @@ const reportHTMLUrl = (REPORT_ARTEFACT_URL + reportHTML)
 
 messageSelector(); // decide which message 
 
-
-
 function getFiles(dir, ext, fileList = []) {
-  const files = fs.readdirSync(dir);
-  files.forEach((file) => {
-    const filePath = `${dir}/${file}`;
-    if (fs.statSync(filePath).isDirectory()) {
-      getFiles(filePath, fileList);
-    } else if (path.extname(file) === ext) {
-      fileList.push(filePath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
     }
-  });
-  return fileList;
+    const files = fs.readdirSync(dir);
+    files.forEach((file) => {
+        const filePath = `${dir}/${file}`;
+        if (fs.statSync(filePath).isDirectory()) {
+            getFiles(filePath, ext, fileList);
+        } else if (path.extname(file) === ext) {
+            fileList.push(filePath);
+        }
+    });
+    return fileList;
 }
 
 function getTestReportStatus() {
