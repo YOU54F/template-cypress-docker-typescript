@@ -16,7 +16,7 @@ Then(/the cypress runner should not break/, () => {
 
 Then(
   /tests tagged '(.+)' should (not )?proceed/,
-  (tags: string, shouldProceed = false) => {
+  (tags: string, shouldProceed: boolean = false) => {
     const tagsArray = tags.split(" ").map((tag: string) => ({ name: tag }));
     expect(shouldProceedCurrentStep(tagsArray, parsedTags)).to.equal(
       !shouldProceed
