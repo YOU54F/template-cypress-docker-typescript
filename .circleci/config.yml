@@ -13,12 +13,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v2-deps-{{ .Branch }}-{{ checksum "e2e/package-lock.json" }}
+            - v2-deps-{{ .Branch }}-{{ checksum "e2e/yarn.lock" }}
             - v2-deps-{{ .Branch }}-
             - v2-deps-
-      - run: cd e2e && npm ci
+      - run: cd e2e && yarn install
       - save_cache:
-          key: v2-deps-{{ .Branch }}-{{ checksum "e2e/package-lock.json" }}
+          key: v2-deps-{{ .Branch }}-{{ checksum "e2e/yarn.lock" }}
           paths:
             - ~/.npm
             - ~/.cache
@@ -28,11 +28,11 @@ jobs:
       - run:
           name: Running E2E tests
           when: on_success
-          command: cd e2e && npm run test:cypress 
+          command: cd e2e && yarn run test:cypress 
       - run:
-          name: Combine MochaAwesome Reports
+          name: Generate MochaAwesome Reports
           when: always
-          command: cd e2e && make combine-reports     
+          command: cd e2e && make combine-reports && make generate-report   
       - store_test_results:
           path: e2e/cypress/reports
       - store_artifacts:
