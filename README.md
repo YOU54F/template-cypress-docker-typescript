@@ -110,7 +110,15 @@ The GUI can be opened by `npx cypress open` but requires a `--env configFile=<en
 - HTML Reports of test runs are generated with MochaAwesome are stored in `e2e/cypress/reports`
 - One report is generated per spec file
 - A report bundler is provided which will process each report in `e2e/cypress/reports` and combine them into a single HTML document with a random uuid title in `e2e/mochareports`
-- The report bundler can be run with `make combine-reports`
+- The report bundler can be run with `make combine-reports && make generate-report`
+
+```
+combine-reports:
+	npx mochawesome-merge --reportDir cypress/reports/mocha > mochareports/report-$$(date +'%Y%m%d-%H%M%S').json
+
+generate-report:
+	npx marge mochareports/*.json -f report-$$(date +'%Y%m%d-%H%M%S') -o mochareports
+```
 - It can be published to an AWS S3 bucket with `make publish-reports-s3`
 - To publish to a bucket, set the following env vars
 
@@ -119,7 +127,6 @@ The GUI can be opened by `npx cypress open` but requires a `--env configFile=<en
  export AWS_ACCESS_ID=<YOUR_AWS_ACCESS_ID>
  export AWS_SECRET_KEY=<YOUR_AWS_SECRET_KEY>
 ```
-
 
 ## Typescript
 

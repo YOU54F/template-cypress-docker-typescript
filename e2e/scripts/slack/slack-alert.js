@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const combine = require('../combine.js');
 const {
     IncomingWebhook
 } = require('@slack/client');
@@ -34,10 +33,26 @@ const reportHTMLUrl = (REPORT_ARTEFACT_URL + reportHTML)
 
 messageSelector(); // decide which message 
 
+function getFiles(dir, ext, fileList = []) {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+    }
+    const files = fs.readdirSync(dir);
+    files.forEach((file) => {
+        const filePath = `${dir}/${file}`;
+        if (fs.statSync(filePath).isDirectory()) {
+            getFiles(filePath, ext, fileList);
+        } else if (path.extname(file) === ext) {
+            fileList.push(filePath);
+        }
+    });
+    return fileList;
+}
+
 function getTestReportStatus() {
     const reportDir = path.join(__dirname, '..', '..', 'mochareports');
-    const reportFile = combine.getFiles(reportDir, '.json', []);
-    reportHTML = combine.getFiles(reportDir, '.html', []);
+    const reportFile = getFiles(reportDir, '.json', []);
+    reportHTML = getFiles(reportDir, '.html', []);
     const rawdata = fs.readFileSync(reportFile[0]);
     const parsedData = JSON.parse(rawdata);
     const reportStats = parsedData.stats
@@ -83,7 +98,7 @@ function prChecker() {
 
 function getVideoLinks() {
     const videosDir = path.join(__dirname, '../..', 'cypress', 'videos');
-    const videos = combine.getFiles(videosDir, '.mp4', []);
+    const videos = getFiles(videosDir, '.mp4', []);
     videos.forEach((videoObject) => {
         trimmed_video_filename = path.basename(videoObject)
         video_attachments_slack = `<${REPORT_ARTEFACT_URL}${videoObject}|Video:- ${trimmed_video_filename}>\n${video_attachments_slack}`
@@ -92,7 +107,7 @@ function getVideoLinks() {
 
 function getScreenshotLinks() {
     const screenshotDir = path.join(__dirname, '../..', 'cypress', 'screenshots');
-    const screenshots = combine.getFiles(screenshotDir, '.png', []);
+    const screenshots = getFiles(screenshotDir, '.png', []);
     screenshots.forEach((screenshotObject) => {
         trimmed_screenshot_filename = path.basename(screenshotObject)
         screenshot_attachments_slack = `<${REPORT_ARTEFACT_URL}${screenshotObject}|Screenshot:- ${trimmed_screenshot_filename}>\n${screenshot_attachments_slack}`
