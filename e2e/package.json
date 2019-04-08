@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "^4.0.3",
-    "@slack/client": "^5.0.0",
+    "@slack/types": "^1.0.0",
+    "@slack/webhook": "^5.0.0",
     "@types/node": "^10.12.11",
     "cypress": "^3.2.0",
     "cypress-failed-log": "^2.5.0",
@@ -31,6 +32,7 @@
     "shelljs": "^0.8.3",
     "sonarqube-scanner": "^2.4.0",
     "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.3",
     "typescript": "^3.4.1",
     "uuid": "^3.3.2",
     "webpack": "^4.29.6"

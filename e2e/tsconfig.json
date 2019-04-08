@@ -4,6 +4,6 @@
     "target": "es5",
     "module": "commonjs",
     "skipLibCheck": true,
-    "types": ["cypress", "cypress-testing-library", "node"],
+    "types": ["cypress", "cypress-testing-library", "node","@slack/types"],
   }
 }
