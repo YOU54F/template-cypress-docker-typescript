@@ -7,8 +7,8 @@
   "author": "Yousaf Nabi",
   "license": "ISC",
   "scripts": {
-    "lint":"tslint project .",
-    "lint-fix":"tslint project . --fix",
+    "lint":"tslint --project .",
+    "lint-fix":"tslint --project . --fix",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress:record": "cypress run --record",
