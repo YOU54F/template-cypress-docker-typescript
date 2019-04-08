@@ -1,13 +1,13 @@
 /// &amp;amp;amp;lt;reference path="node_modules/@slack/dist/types/index.d.ts"&amp;amp;amp;gt;
 /// &amp;amp;amp;lt;reference path="node_modules/@slack/webhook/dist/IncomingWebhook.d.ts"&amp;amp;amp;gt;
-import * as fs from "fs"
-import * as path from "path"
 import { MessageAttachment } from "@slack/types";
 import {
-  IncomingWebhookSendArguments,
   IncomingWebhook,
-  IncomingWebhookDefaultArguments
+  IncomingWebhookDefaultArguments,
+  IncomingWebhookSendArguments
 } from "@slack/webhook";
+import * as fs from "fs"
+import * as path from "path"
 
 const {
   CIRCLE_SHA1,
@@ -21,17 +21,17 @@ const {
 } = process.env;
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL as string;
 
-const VCS_ROOT = "github"; //change to bitbucket, if circleci project hosted on bitbucket
+const VCS_ROOT = "github"; // change to bitbucket, if circleci project hosted on bitbucket
 const VCS_BASEURL_GITHUB = "https://github.com";
 const VCS_BASEURL_BITBUCKET = "https://bitbucket.org";
 const CIRCLE_URL = "https://circleci.com/api/v1.1/project";
 const GIT_COMMIT_URL = `${VCS_BASEURL_GITHUB}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/commit/${CIRCLE_SHA1}`;
 const BITBUCKET_COMMIT_URL = `${VCS_BASEURL_BITBUCKET}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/commits/${CIRCLE_SHA1}`;
-const REPORT_ARTEFACT_URL = `${CIRCLE_URL}/${VCS_ROOT}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts/0`;
 let pr_link: string = "";
 let video_attachments_slack: string = "";
 let screenshot_attachments_slack: string = "";
 let reportHTML;
+const REPORT_ARTEFACT_URL = `${CIRCLE_URL}/${VCS_ROOT}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts/0`;
 const reportHTMLUrl = REPORT_ARTEFACT_URL + reportHTML;
 
 let attachments: MessageAttachment;
@@ -52,35 +52,35 @@ function sendMessage() {
   let status;
   if (reportStats.totalTests === undefined || reportStats.totalTests === 0) {
     status = "error";
-    let webhookInitialArguments = webhookInitialArgs({}, status);
-    let webhook = new IncomingWebhook(
+    const webhookInitialArguments = webhookInitialArgs({}, status);
+    const webhook = new IncomingWebhook(
       SLACK_WEBHOOK_URL,
       webhookInitialArguments
     );
-    let reports = attachmentReports(attachments, status);
-    let sendArguments = webhookSendArgs(sendArgs, [reports]);
+    const reports = attachmentReports(attachments, status);
+    const sendArguments = webhookSendArgs(sendArgs, [reports]);
     webhook.send(sendArguments);
   } else if (reportStats.totalFailures > 0 || reportStats.totalPasses === 0) {
     status = "failed";
-    let webhookInitialArguments = webhookInitialArgs({}, status);
-    let webhook = new IncomingWebhook(
+    const webhookInitialArguments = webhookInitialArgs({}, status);
+    const webhook = new IncomingWebhook(
       SLACK_WEBHOOK_URL,
       webhookInitialArguments
     );
-    let reports = attachmentReports(attachments, status);
-    let artefacts = attachementsVideoAndScreenshots(attachments, status);
-    let sendArguments = webhookSendArgs(sendArgs, [reports, artefacts]);
+    const reports = attachmentReports(attachments, status);
+    const artefacts = attachementsVideoAndScreenshots(attachments, status);
+    const sendArguments = webhookSendArgs(sendArgs, [reports, artefacts]);
     webhook.send(sendArguments);
   } else if (reportStats.totalFailures === 0) {
     status = "passed";
-    let webhookInitialArguments = webhookInitialArgs({}, status);
-    let webhook = new IncomingWebhook(
+    const webhookInitialArguments = webhookInitialArgs({}, status);
+    const webhook = new IncomingWebhook(
       SLACK_WEBHOOK_URL,
       webhookInitialArguments
     );
-    let reports = attachmentReports(attachments, status);
-    let artefacts = attachementsVideoAndScreenshots(attachments, status);
-    let sendArguments = webhookSendArgs(sendArgs, [reports, artefacts]);
+    const reports = attachmentReports(attachments, status);
+    const artefacts = attachementsVideoAndScreenshots(attachments, status);
+    const sendArguments = webhookSendArgs(sendArgs, [reports, artefacts]);
     webhook.send(sendArguments);
   }
 }
@@ -218,7 +218,7 @@ function attachementsVideoAndScreenshots(
   return attachments;
 }
 
-function getFiles(dir: string, ext: string, fileList: Array<string>) {
+function getFiles(dir: string, ext: string, fileList: string[]) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
@@ -268,7 +268,7 @@ function getVideoLinks() {
   const videosDir = path.join(__dirname, "../..", "cypress", "videos");
   const videos = getFiles(videosDir, ".mp4", []);
   videos.forEach(videoObject => {
-    let trimmed_video_filename = path.basename(videoObject);
+    const trimmed_video_filename = path.basename(videoObject);
     video_attachments_slack = `<${REPORT_ARTEFACT_URL}${videoObject}|Video:- ${trimmed_video_filename}>\n${video_attachments_slack}`;
   });
 }
@@ -277,7 +277,7 @@ function getScreenshotLinks() {
   const screenshotDir = path.join(__dirname, "../..", "cypress", "screenshots");
   const screenshots = getFiles(screenshotDir, ".png", []);
   screenshots.forEach(screenshotObject => {
-    let trimmed_screenshot_filename = path.basename(screenshotObject);
+    const trimmed_screenshot_filename = path.basename(screenshotObject);
     screenshot_attachments_slack = `<${REPORT_ARTEFACT_URL}${screenshotObject}|Screenshot:- ${trimmed_screenshot_filename}>\n${screenshot_attachments_slack}`;
   });
 }

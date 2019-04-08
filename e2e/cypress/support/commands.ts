@@ -4,7 +4,7 @@ import 'cypress-testing-library/add-commands';
 
 declare global {
   namespace Cypress {
-    type Greeting = {
+    interface Greeting {
       greeting: string,
       name: string
     }

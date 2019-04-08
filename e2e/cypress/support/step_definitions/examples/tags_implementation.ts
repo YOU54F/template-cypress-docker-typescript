@@ -1,5 +1,5 @@
-import { Given, Then, When } from "cypress-cucumber-preprocessor/steps";
 import { shouldProceedCurrentStep } from "cypress-cucumber-preprocessor/lib/tagsHelper";
+import { Given, Then, When } from "cypress-cucumber-preprocessor/steps";
 
 let parsedTags: string;
 
