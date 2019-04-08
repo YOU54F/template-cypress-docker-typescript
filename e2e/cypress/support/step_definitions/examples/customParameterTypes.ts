@@ -1,4 +1,4 @@
-import { Given, Then, When, defineParameterType } from "cypress-cucumber-preprocessor/steps";
+import { defineParameterType, Given, Then, When } from "cypress-cucumber-preprocessor/steps";
 
 const notes = ["A", "B", "C", "D", "E", "F", "G"];
 

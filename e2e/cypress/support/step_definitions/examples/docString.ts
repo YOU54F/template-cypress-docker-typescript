@@ -1,7 +1,7 @@
 import { Given, Then, When } from "cypress-cucumber-preprocessor/steps";
 
 let code = "";
-let variableToVerify = ""; // we are assigning this through eval
+const variableToVerify = ""; // we are assigning this through eval
 
 When("I use DocString for code like this:", (dataString: string) => {
   code = dataString;

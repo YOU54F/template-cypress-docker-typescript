@@ -1,7 +1,7 @@
 import { loginIds } from '../dataTestIds/login.ids';
 
 class LoginPage {
-  visit() {
+  public visit() {
     cy.visit('/login');
     cy.url().should('include', 'login')
   }
