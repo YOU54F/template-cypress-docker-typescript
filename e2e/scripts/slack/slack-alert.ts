@@ -48,8 +48,8 @@ export function runner(ciProvider: string, vcsRoot: string) {
     CI_URL = "https://circleci.com/api/v1.1/project";
   }
   if (vcsRoot || vcsRoot === undefined) {
-    if (vcsRoot === undefined){
-      vcsRoot = 'github'
+    if (vcsRoot === undefined) {
+      vcsRoot = "github";
     }
     VCS_ROOT = vcsRoot;
   }
@@ -93,7 +93,10 @@ export function sendMessage() {
         SLACK_WEBHOOK_URL,
         webhookInitialArguments
       );
-      const reports = attachmentReports(attachments, status);
+      const reports = attachmentReports({
+        attachmentsReports: attachments,
+        status
+      });
       const sendArguments = webhookSendArgs(sendArgs, [reports]);
       return webhook.send(sendArguments);
     }
@@ -103,7 +106,10 @@ export function sendMessage() {
         SLACK_WEBHOOK_URL,
         webhookInitialArguments
       );
-      const reports = attachmentReports(attachments, status);
+      const reports = attachmentReports({
+        attachmentsReports: attachments,
+        status
+      });
       const artefacts = attachementsVideoAndScreenshots(attachments, status);
       const sendArguments = webhookSendArgs(sendArgs, [reports, artefacts]);
       return webhook.send(sendArguments);
@@ -114,7 +120,10 @@ export function sendMessage() {
         SLACK_WEBHOOK_URL,
         webhookInitialArguments
       );
-      const reports = attachmentReports(attachments, status);
+      const reports = attachmentReports({
+        attachmentsReports: attachments,
+        status
+      });
       const artefacts = attachementsVideoAndScreenshots(attachments, status);
       const sendArguments = webhookSendArgs(sendArgs, [reports, artefacts]);
       return webhook.send(sendArguments);
@@ -127,6 +136,7 @@ export function sendMessage() {
 
 export function webhookInitialArgs(
   initialArgs: IncomingWebhookDefaultArguments,
+  // tslint:disable-next-line: no-shadowed-variable
   status: string
 ) {
   switch (status) {
@@ -167,10 +177,14 @@ export function webhookSendArgs(
   return argsWebhookSend;
 }
 
-export function attachmentReports(
-  attachmentsReports: MessageAttachment,
-  status: string
-) {
+export function attachmentReports({
+  attachmentsReports,
+  // tslint:disable-next-line: no-shadowed-variable
+  status
+}: {
+  attachmentsReports: MessageAttachment;
+  status: string;
+}) {
   switch (status) {
     case "passed": {
       return (attachments = {
@@ -239,6 +253,7 @@ export function attachmentReports(
 
 export function attachementsVideoAndScreenshots(
   attachmentsVideosScreenshots: MessageAttachment,
+  // tslint:disable-next-line: no-shadowed-variable
   status: string
 ) {
   switch (status) {
@@ -390,10 +405,17 @@ export function buildHTMLReportURL() {
   artefactUrl = `${CI_URL}/${VCS_ROOT}/${CI_PROJECT_USERNAME}/${CI_PROJECT_REPONAME}/${CI_BUILD_NUM}/artifacts/0`;
   reportHTMLFilename = getHTMLReportFilename(reportDir);
   reportHTMLUrl =
-    artefactUrl + "/" +  artefactPath + "/" + reportPath + "/" + reportHTMLFilename;
+    artefactUrl +
+    "/" +
+    artefactPath +
+    "/" +
+    reportPath +
+    "/" +
+    reportHTMLFilename;
   return reportHTMLUrl + artefactUrl;
 }
 
+// tslint:disable-next-line: no-shadowed-variable
 function getCommitUrl(VCS_ROOT: string) {
   if (VCS_ROOT === "github") {
     VCS_BASEURL = "https://github.com";

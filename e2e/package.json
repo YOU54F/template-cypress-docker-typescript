@@ -60,7 +60,12 @@
     "nonGlobalStepDefinitions": false
   },
   "lint-staged": {
-    "src/**/*.ts": [
+    "cypress/**/*.ts": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ],
+    "scripts/**/*.ts": [
       "prettier --write",
       "tslint --fix",
       "git add"
