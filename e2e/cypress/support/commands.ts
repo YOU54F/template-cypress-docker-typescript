@@ -29,9 +29,9 @@ declare global {
        * @memberof Cypress.Chainable
        *
        * @example
-        ```
-        cy.sum(2, 3).should('equal', 5)
-        ```
+       * ```
+       * cy.sum(2, 3).should('equal', 5)
+       * ```
        */
       sum: (a: number, b: number) => Chainable<number>
 
@@ -39,18 +39,18 @@ declare global {
        * Example command that passes an object of arguments.
        * @memberof Cypress.Chainable
        * @example
-       ```
-        cy.greeting({ greeting: 'Hello', name: 'Friend' })
-        // or use defaults
-        cy.greeting()
-       ```
+       * ```
+       * cy.greeting({ greeting: 'Hello', name: 'Friend' })
+       * // or use defaults
+       * cy.greeting()
+       * ```
        */
       greeting: (options?: Greeting) => void
     }
   }
 }
 
-  /**
+/**
  * An example function "foo()"
  *
  * @returns {string} "foo"
@@ -74,7 +74,7 @@ export function foo2() {
 /**
  * Adds two numbers
  * @example sum(2, 3) // 5
-*/
+ */
 export function sum(a: number, b: number): number {
   return a + b
 }
@@ -90,6 +90,7 @@ const defaultGreeting: Cypress.Greeting = {
  */
 export const printToConsole = (options = defaultGreeting) => {
   const {greeting, name} = options
+// tslint:disable-next-line: no-console
   console.log(`${greeting}, ${name}`)
 }
 

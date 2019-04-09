@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ],
     "strict": true,
     "target": "es5",
     "module": "commonjs",
     "skipLibCheck": true,
-    "types": ["cypress", "cypress-testing-library", "node","@slack/types"],
-  }
+    "types": ["node","@slack/types","@types/jest","jest","commander/typings"],
+  },
 }

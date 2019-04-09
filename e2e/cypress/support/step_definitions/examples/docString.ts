@@ -8,6 +8,7 @@ When("I use DocString for code like this:", (dataString: string) => {
 });
 
 When("I ran it and verify that it executes it", () => {
+// tslint:disable-next-line: no-eval
   eval(code);
   expect(variableToVerify).to.equal("hello world");
 });

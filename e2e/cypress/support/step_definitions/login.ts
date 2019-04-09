@@ -5,6 +5,7 @@ Given('I have loaded the internet page', () => {
   login.visit()
 })
 
+// tslint:disable-next-line: no-empty
 Given('I am a user', () => {
 })
 

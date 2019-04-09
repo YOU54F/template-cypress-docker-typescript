@@ -17,6 +17,7 @@ defineParameterType({
 
 let keySound: string 
 
+// tslint:disable-next-line: variable-name
 When("I press the {ordinal} key of my piano", (number: number) => {
   keySound = notes[(number - 1) % 7];
 });
