@@ -37,7 +37,7 @@ generate-report:
 	npx marge mochareports/*.json -f report-$$(date +'%Y%m%d-%H%M%S') -o mochareports
 
 slack-alert:
-	npx ts-node scripts/slack/slack-alert.ts
+	npx mochawesome-slack-reporter --logger
 
 docker-build:
 	docker build . -t $(DOCKERIMGNAME)
