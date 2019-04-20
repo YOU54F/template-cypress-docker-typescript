@@ -2946,6 +2946,15 @@ cypress-failed-log@^2.5.0:
     debug "4.1.1"
     logdown "3.2.8"
 
+cypress-slack-reporter@1.0.8:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.0.2.tgz#164b29be3891c5de6b1a161540215f54df9135b4"
+  integrity sha512-hwpv8X5jUNyui3se++quLmzrcijmzUhazt7vj1F6Vf4CCFHmc5Y+ZLvEsYs7s3Z+ZfjMNZBxvjo+bwbbNoA6Tg==
+  dependencies:
+    "@slack/types" "^1.0.0"
+    "@slack/webhook" "^5.0.0"
+    commander "^2.20.0"
+
 cypress-testing-library@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/cypress-testing-library/-/cypress-testing-library-2.4.0.tgz#30e3351dde4d7aebb8ba524141203a2d44f70d3c"
@@ -6298,15 +6307,6 @@ mochawesome-report-generator@^3.0.1, mochawesome-report-generator@^3.1.5:
     tcomb-validation "^3.3.0"
     validator "^9.1.2"
     yargs "^10.0.3"
-
-mochawesome-slack-reporter@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/mochawesome-slack-reporter/-/mochawesome-slack-reporter-1.0.7.tgz#af97ef1f7371d76ecaf1fe36892ce2ec07bd4eec"
-  integrity sha512-Ud3TK9SdK/yM3ssSXxtu7gzK7DimVdQwdbLxlqPkzMEc7ubJOE6CrRh/QpLnxs5ZxSNXPO0b+DodTPwGgJxfoA==
-  dependencies:
-    "@slack/types" "^1.0.0"
-    "@slack/webhook" "^5.0.0"
-    commander "^2.20.0"
 
 mochawesome@^3.1.1:
   version "3.1.1"
