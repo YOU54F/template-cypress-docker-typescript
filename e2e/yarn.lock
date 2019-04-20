@@ -2946,6 +2946,15 @@ cypress-failed-log@^2.5.0:
     debug "4.1.1"
     logdown "3.2.8"
 
+cypress-slack-reporter@1.0.8:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.0.2.tgz#164b29be3891c5de6b1a161540215f54df9135b4"
+  integrity sha512-hwpv8X5jUNyui3se++quLmzrcijmzUhazt7vj1F6Vf4CCFHmc5Y+ZLvEsYs7s3Z+ZfjMNZBxvjo+bwbbNoA6Tg==
+  dependencies:
+    "@slack/types" "^1.0.0"
+    "@slack/webhook" "^5.0.0"
+    commander "^2.20.0"
+
 cypress-testing-library@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/cypress-testing-library/-/cypress-testing-library-2.4.0.tgz#30e3351dde4d7aebb8ba524141203a2d44f70d3c"
