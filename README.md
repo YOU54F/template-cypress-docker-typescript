@@ -1,7 +1,7 @@
 # Cypress IO Typescript Example
 
-[![CircleCI](https://circleci.com/gh/YOU54F/cypressio-docker-typescript.svg?style=svg)](https://circleci.com/gh/YOU54F/cypressio-docker-typescript)
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=YOU54F_cypressio-docker-typescript&metric=alert_status)](https://sonarcloud.io/dashboard?id=YOU54F_cypressio-docker-typescript)
+[![CircleCI](https://circleci.com/gh/YOU54F/cypress-docker-typescript.svg?style=svg)](https://circleci.com/gh/YOU54F/cypress-docker-typescript)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=YOU54F_cypress-docker-typescript&metric=alert_status)](https://sonarcloud.io/dashboard?id=YOU54F_cypress-docker-typescript)
 
 This is an example project testing a few different sites
 
@@ -145,7 +145,7 @@ generate-report:
 
 This project is building in CircleCI and can be viewed at the following link
 
-https://circleci.com/gh/YOU54F/cypressio-docker-typescript
+https://circleci.com/gh/YOU54F/cypress-docker-typescript
 
 See the `.circleci` folder
 
