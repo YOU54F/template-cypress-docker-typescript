@@ -3107,13 +3107,13 @@ cypress-slack-reporter@0.0.3:
     commander "^2.20.0"
     slack-mocker "^1.2.6"
 
-cypress-testing-library@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/cypress-testing-library/-/cypress-testing-library-3.0.1.tgz#cd5f4ce4423cbb20cafdb869b435b35d01d11b66"
-  integrity sha512-vpGRbcYS229KP/FOASKQuT717GxpO9mG7rnFz2dOe7sz7JPnIHIP5M3KoPvoLfAN1TictFFv05jndyJi2OLa3A==
+cypress-testing-library@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/cypress-testing-library/-/cypress-testing-library-2.6.0.tgz#799f4feead46d2f5c83df932449ae1e9bfe632b0"
+  integrity sha512-Zdt0jqmJTiLhi6JX2yZRQeqK8gRSvuue09GgKvMsuKS4vSNEeSH7kDqGjf9ORgkr65NkSw5NRrdlJaYsfQ8UMw==
   dependencies:
     "@babel/runtime" "^7.4.3"
-    dom-testing-library "^4.0.0"
+    dom-testing-library "^3.12.4"
 
 cypress@^3.2.0:
   version "3.2.0"
@@ -3499,10 +3499,10 @@ doctrine@^1.2.2:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-dom-testing-library@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-4.0.0.tgz#14471ff484cda6041c016c0a2a42d53bf1f4ad03"
-  integrity sha512-ycBnCZrhijGQMIg6HnMKy+K3KqWtieYVMoHVaK1kcei5WmoO2Cj3imUtQRs/N0ZvZVETuVqo1UqEAJ6v14zd+w==
+dom-testing-library@^3.12.4:
+  version "3.19.4"
+  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.19.4.tgz#f5b737f59ee9749a4568fa353f1f59be97c888c3"
+  integrity sha512-GJOx8CLpnkvM3takILOsld/itUUc9+7Qh6caN1Spj6+9jIgNPY36fsvoH7sEgYokC0lBRdttO7G7fIFYCXlmcA==
   dependencies:
     "@babel/runtime" "^7.4.3"
     "@sheerun/mutationobserver-shim" "^0.3.2"
