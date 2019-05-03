@@ -1,4 +1,5 @@
 FROM debian:stretch-20181226
+ARG FIREFOX_VERSION=57.0.2
 ENV NVM_VERSION=0.34.0
 ENV NODE_VERSION=8.15.0
 ENV NVM_DIR /usr/local/nvm
@@ -14,11 +15,17 @@ RUN mkdir $NVM_DIR \
     libxtst6 \
     xvfb \
     zip \
+    gnupg \
+    wget \
   && curl -o- https://raw.githubusercontent.com/creationix/nvm/v$NVM_VERSION/install.sh | bash \
   && echo "source $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use default" | bash \
+  && wget --no-verbose -O /tmp/firefox.tar.bz2 https://download-installer.cdn.mozilla.net/pub/firefox/releases/$FIREFOX_VERSION/linux-x86_64/en-US/firefox-$FIREFOX_VERSION.tar.bz2 \
+  && tar -C /opt -xjf /tmp/firefox.tar.bz2 \
+  && rm /tmp/firefox.tar.bz2 \
+  && ln -fs /opt/firefox/firefox /usr/bin/firefox \
   && apt-get purge -y curl \
   && apt-get -y --purge autoremove \
   && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
@@ -32,7 +39,10 @@ RUN echo  "installing yarn:    $(npm i -g yarn) \n" \
           "node version:    $(node -v) \n" \
           "npm version:     $(npm -v) \n" \
           "yarn verison:    $(yarn -v) \n" \
-          "debian version:  $(cat /etc/debian_version) \n"
-# FROM you54f/cypressbaseelectron
+          "debian version:  $(cat /etc/debian_version) \n" \
+          "Firefox version:  $(firefox --version) \n"
+          
+# FROM you54f/cypressbasefirefox
 # RUN npm i cypress
-# RUN $(npm bin)/cypress run
+# RUN firefox --version
+# RUN $(npm bin)/cypress run --browser firefox
