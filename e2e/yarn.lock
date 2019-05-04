@@ -2951,10 +2951,10 @@ cypress-failed-log@^2.5.0:
     debug "4.1.1"
     logdown "3.2.8"
 
-cypress-slack-reporter@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.0.4.tgz#3a54e568313243ce0a4c0f8be20559f24c7529e8"
-  integrity sha512-Sf0NV/xbfd2OOw0xfyE4F6mZ+O+5RMbJ+eedb73v4MHbsWJEyDyYa7IxQ9NfDYM6z7cMDkrxp0oOW9kHCWqj0w==
+cypress-slack-reporter@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.1.2.tgz#0931a70cf93c53a0339b8eabf25912dbaf5885e6"
+  integrity sha512-hgSllRDRRdKD0PpaO3+04Riu9AhI4onInVKk1mvowWlgdZE7V6XZ1QyPL/QLk//gbVAGiyCoHstYrqmJ0J7dMA==
   dependencies:
     "@slack/types" "^1.0.0"
     "@slack/webhook" "^5.0.0"
