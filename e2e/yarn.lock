@@ -2951,10 +2951,10 @@ cypress-failed-log@^2.5.0:
     debug "4.1.1"
     logdown "3.2.8"
 
-cypress-multi-reporters@^1.1.9:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/cypress-multi-reporters/-/cypress-multi-reporters-1.1.9.tgz#ff6287a39a9aad7d67874b5c64ded533966d73cd"
-  integrity sha512-Yb6Mrzsa3SOzx/yKq2kMY63GxHDpgC7HH492FLsputUNgjAGUC5N5HqnD/SpmyUolS5oomCIJ5xujJoFPGmfBA==
+cypress-multi-reporters@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/cypress-multi-reporters/-/cypress-multi-reporters-1.1.12.tgz#406d837189a785a988597a8675d84c5dc0455fed"
+  integrity sha512-RPLmG4eesFOvxJLG6Ahc9Et5f+IxhQO6xs7Tlqi7VcOqmhtlMA0xcWrtDJKlJk658GK321CCt0tnoPEY4awN3A==
   dependencies:
     debug "^3.1.0"
     lodash "^4.16.4"

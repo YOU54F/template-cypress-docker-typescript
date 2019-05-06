@@ -39,7 +39,7 @@
     "lint-staged": "^8.1.5",
     "mocha": "^5.2.0",
     "mocha-junit-reporters": "^1.23.0",
-    "cypress-multi-reporters": "^1.1.9",
+    "cypress-multi-reporters": "^1.1.12",
     "mochawesome": "^3.1.1",
     "mochawesome-merge": "^1.0.7",
     "mochawesome-report-generator": "^3.1.5",
