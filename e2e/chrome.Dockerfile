@@ -14,11 +14,17 @@ RUN mkdir $NVM_DIR \
     libxtst6 \
     xvfb \
     zip \
+    gnupg \
+    wget \
   && curl -o- https://raw.githubusercontent.com/creationix/nvm/v$NVM_VERSION/install.sh | bash \
   && echo "source $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use default" | bash \
+  && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \ 
+  echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list | bash && \
+  apt-get update && \
+  apt-get install -y dbus-x11 google-chrome-stable \
   && apt-get purge -y curl \
   && apt-get -y --purge autoremove \
   && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
@@ -32,7 +38,10 @@ RUN echo  "installing yarn:    $(npm i -g yarn) \n" \
           "node version:    $(node -v) \n" \
           "npm version:     $(npm -v) \n" \
           "yarn verison:    $(yarn -v) \n" \
-          "debian version:  $(cat /etc/debian_version) \n"
-# FROM you54f/cypressbaseelectron
+          "debian version:  $(cat /etc/debian_version) \n" \
+          "Chrome version:  $(google-chrome --version) \n"
+          
+# FROM you54f/cypressbasechrome
 # RUN npm i cypress
-# RUN $(npm bin)/cypress run
+# RUN google-chrome --version
+# RUN $(npm bin)/cypress run --browser chrome
