@@ -2951,6 +2951,14 @@ cypress-failed-log@^2.5.0:
     debug "4.1.1"
     logdown "3.2.8"
 
+cypress-multi-reporters@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/cypress-multi-reporters/-/cypress-multi-reporters-1.1.9.tgz#ff6287a39a9aad7d67874b5c64ded533966d73cd"
+  integrity sha512-Yb6Mrzsa3SOzx/yKq2kMY63GxHDpgC7HH492FLsputUNgjAGUC5N5HqnD/SpmyUolS5oomCIJ5xujJoFPGmfBA==
+  dependencies:
+    debug "^3.1.0"
+    lodash "^4.16.4"
+
 cypress-slack-reporter@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.0.2.tgz#164b29be3891c5de6b1a161540215f54df9135b4"
@@ -6258,24 +6266,16 @@ mkdirp@0.5.1, mkdirp@0.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0
   dependencies:
     minimist "0.0.8"
 
-mocha-junit-reporter@^1.21.0:
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/mocha-junit-reporter/-/mocha-junit-reporter-1.21.0.tgz#f566276cb059335916fb7b044d9260c4a92249c7"
-  integrity sha512-mA5pwMBtKxU9xRYKlQXMmXx683zwY71dOcB/Mvn+NT8jcSObf4UMixbCuEVntHl1vZoyid+WccIcPIbayoaBcA==
+mocha-junit-reporters@^1.23.0:
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/mocha-junit-reporters/-/mocha-junit-reporters-1.23.0.tgz#3ce8e7d56f1fa51f3f0f6629ec6f4404b5f60ebc"
+  integrity sha512-EJMdfU9d9m2lIYY8+xvZRGnRQiZ4/rbv+w4jFS3aTxcjONAauOttVSFBvaFXKg0MW0Fm6fmf0Jw2wJy4OQQjfw==
   dependencies:
     debug "^2.2.0"
     md5 "^2.1.0"
     mkdirp "~0.5.1"
     strip-ansi "^4.0.0"
     xml "^1.0.0"
-
-mocha-multi-reporters@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/mocha-multi-reporters/-/mocha-multi-reporters-1.1.7.tgz#cc7f3f4d32f478520941d852abb64d9988587d82"
-  integrity sha1-zH8/TTL0eFIJQdhSq7ZNmYhYfYI=
-  dependencies:
-    debug "^3.1.0"
-    lodash "^4.16.4"
 
 mocha@^6.1.4:
   version "6.1.4"
