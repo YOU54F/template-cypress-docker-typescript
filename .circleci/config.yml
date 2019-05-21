@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Running E2E tests
           when: on_success
-          command: cd e2e && yarn run test:cypress 
+          command: cd e2e && yarn run test:cypress:record
       - run:
           name: Generate MochaAwesome Reports
           when: always

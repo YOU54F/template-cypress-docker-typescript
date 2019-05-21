@@ -17,9 +17,11 @@
     "cypress:record": "cypress run --record",
     "test:cypress:serve": "serve --listen 13370 ./cypress/fixtures/test-app",
     "test:cypress:run": "wait-port --timeout 10000 localhost:13370 && cypress run",
+    "test:cypress:run:record": "wait-port --timeout 10000 localhost:13370 && cypress run --record",
     "test:cypress:open": "wait-port --timeout 10000 localhost:13370 && cypress open",
     "test:cypress:dev": "npm-run-all --silent --parallel --race test:cypress:serve test:cypress:open",
-    "test:cypress": "npm-run-all --silent --parallel --race test:cypress:serve test:cypress:run"
+    "test:cypress": "npm-run-all --silent --parallel --race test:cypress:serve test:cypress:run",
+    "test:cypress:record": "npm-run-all --silent --parallel --race test:cypress:serve test:cypress:run:record"
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "^4.0.3",
