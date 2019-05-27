@@ -30,7 +30,7 @@
     "@types/jest": "^24.0.11",
     "@types/node": "^10.12.11",
     "commander": "^2.20.0",
-    "cypress": "^3.2.0",
+    "cypress": "^3.3.1",
     "cypress-cucumber-preprocessor": "1.11.2",
     "cypress-failed-log": "^2.5.0",
     "cypress-testing-library": "2.6.0",
