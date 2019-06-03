@@ -49,6 +49,10 @@ jobs:
           name: Slack Custom Reporting
           when: always
           command: cd e2e && make slack-alert 
+      - run:
+          name: Full cypress run with reporting via script
+          when: always
+          command: cd e2e && make run-script 
 
 workflows:
   build-test:

@@ -62,3 +62,6 @@ docker-test-production:
 
 docker-test-record:
 	$(DOCKERRUNCMD) $(CYPRESSRUNCMD) --record
+
+run-script:
+	rm -rf ./cypress/reports/mocha && npx ts-node script.ts
