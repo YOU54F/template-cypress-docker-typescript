@@ -2955,13 +2955,13 @@ cypress-failed-log@2.5.0:
     debug "4.1.1"
     logdown "3.2.8"
 
-cypress-multi-reporters@1.1.9:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/cypress-multi-reporters/-/cypress-multi-reporters-1.1.9.tgz#ff6287a39a9aad7d67874b5c64ded533966d73cd"
-  integrity sha512-Yb6Mrzsa3SOzx/yKq2kMY63GxHDpgC7HH492FLsputUNgjAGUC5N5HqnD/SpmyUolS5oomCIJ5xujJoFPGmfBA==
+cypress-multi-reporters@1.1.20:
+  version "1.1.20"
+  resolved "https://registry.yarnpkg.com/cypress-multi-reporters/-/cypress-multi-reporters-1.1.20.tgz#4aa18747fe496d896ee1d44033763037b19c7e12"
+  integrity sha512-w2whKf61SMA3kpljt3stIleaZlstLvQk06JZNbmnJVgJniujhPeSyLeVSY7gYKXBHwQha/sP0Q+QRszKe9qvcQ==
   dependencies:
-    debug "^3.1.0"
-    lodash "^4.16.4"
+    debug "^4.1.1"
+    lodash "^4.17.11"
 
 cypress-slack-reporter@0.3.1:
   version "0.3.1"
@@ -5901,7 +5901,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@4.17.11, lodash@^4.16.4, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4:
+lodash@4.17.11, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
