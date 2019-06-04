@@ -1,7 +1,7 @@
 // tslint:disable-next-line: no-reference
 /// <reference path='./node_modules/cypress/types/cypress-npm-api.d.ts'/>
 import * as CypressNpmApi from "cypress";
-import {slackRunner}from "cypress-slack-reporter/bin/slack-alert";
+import {slackRunner}from "cypress-slack-reporter/bin/slack/slack-alert";
 // tslint:disable: no-var-requires
 const marge = require("mochawesome-report-generator");
 const { merge } = require("mochawesome-merge");

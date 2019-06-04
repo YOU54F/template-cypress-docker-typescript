@@ -53,6 +53,10 @@ jobs:
           name: Full cypress run with reporting via script
           when: always
           command: cd e2e && make run-script 
+      - run:
+          name: Full cypress run with cypress-slack-reporter-full
+          when: always
+          command: cd e2e && ./node_modules/.bin/cypress-slack-reporter-full 
 
 workflows:
   build-test:
