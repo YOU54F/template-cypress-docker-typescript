@@ -39,7 +39,7 @@
     "cypress-testing-library": "2.6.0",
     "husky": "2.0.0",
     "jest": "24.7.1",
-    "jest-junit": "6.3.0",
+    "jest-junit": "6.4.0",
     "jest-stare": "1.13.2",
     "lint-staged": "8.1.7",
     "mocha": "6.1.4",
