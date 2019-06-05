@@ -45,7 +45,7 @@
     "mocha": "6.1.4",
     "mocha-junit-reporters": "1.23.6",
     "cypress-multi-reporters": "1.1.20",
-    "mochawesome": "3.1.2",
+    "mochawesome": "4.0.0",
     "mochawesome-merge": "1.0.7",
     "mochawesome-report-generator": "3.1.5",
     "cypress-slack-reporter": "0.3.1",
