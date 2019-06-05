@@ -38,7 +38,7 @@
     "cypress-failed-log": "2.5.0",
     "cypress-testing-library": "2.6.0",
     "husky": "2.3.0",
-    "jest": "24.7.1",
+    "jest": "24.8.0",
     "jest-junit": "6.4.0",
     "jest-stare": "1.15.0",
     "lint-staged": "8.1.7",
