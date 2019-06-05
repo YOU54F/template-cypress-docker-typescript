@@ -53,7 +53,7 @@
     "prettier": "1.17.1",
     "serve": "11.0.1",
     "shelljs": "0.8.3",
-    "sonarqube-scanner": "2.4.0",
+    "sonarqube-scanner": "2.4.1",
     "ts-jest": "24.0.2",
     "ts-loader": "5.3.3",
     "ts-node": "8.0.3",
