@@ -9,6 +9,6 @@
     "target": "es5",
     "module": "commonjs",
     "skipLibCheck": true,
-    "types": ["node","@slack/types","@types/jest","jest","commander/typings"],
+    "types": ["node","@slack/types","@types/jest","jest","commander/typings","../@testing-library/cypress/typings"],
   },
 }
