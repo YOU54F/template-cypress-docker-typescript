@@ -2986,10 +2986,10 @@ cypress-failed-log@2.5.0:
     debug "4.1.1"
     logdown "3.2.8"
 
-cypress-multi-reporters@1.1.20:
-  version "1.1.20"
-  resolved "https://registry.yarnpkg.com/cypress-multi-reporters/-/cypress-multi-reporters-1.1.20.tgz#4aa18747fe496d896ee1d44033763037b19c7e12"
-  integrity sha512-w2whKf61SMA3kpljt3stIleaZlstLvQk06JZNbmnJVgJniujhPeSyLeVSY7gYKXBHwQha/sP0Q+QRszKe9qvcQ==
+cypress-multi-reporters@1.1.22:
+  version "1.1.22"
+  resolved "https://registry.yarnpkg.com/cypress-multi-reporters/-/cypress-multi-reporters-1.1.22.tgz#eaaf0527a056ce1026df235fc3c4ecc9a8155f81"
+  integrity sha512-Wtywy152Vi1rTH/y18x/ifPnAye+0b9rMECAS5zy1jXCIkovbNBrTQEx9ycE0DtFWpAx5E2rwCiVzU6TvYcjjg==
   dependencies:
     debug "^4.1.1"
     lodash "^4.17.11"
@@ -5433,15 +5433,7 @@ js-levenshtein@^1.1.3:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
-js-yaml@3.13.1, js-yaml@^3.9.0:
-  version "3.13.1"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
-  integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
-  dependencies:
-    argparse "^1.0.7"
-    esprima "^4.0.0"
-
-js-yaml@^3.13.0, js-yaml@^3.13.1:
+js-yaml@3.13.1, js-yaml@^3.13.0, js-yaml@^3.13.1, js-yaml@^3.9.0:
   version "3.13.1"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
