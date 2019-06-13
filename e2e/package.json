@@ -30,7 +30,7 @@
     "@cypress/webpack-preprocessor": "4.1.0",
     "@slack/types": "1.0.0",
     "@slack/webhook": "5.0.0",
-    "@types/jest": "24.0.13",
+    "@types/jest": "24.0.14",
     "@types/node": "10.14.9",
     "commander": "2.20.0",
     "cypress": "3.3.1",
