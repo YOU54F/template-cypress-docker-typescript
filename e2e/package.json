@@ -37,7 +37,7 @@
     "cypress-cucumber-preprocessor": "1.12.0",
     "cypress-failed-log": "2.5.0",
     "@testing-library/cypress": "4.0.3",
-    "husky": "2.4.1",
+    "husky": "2.6.0",
     "jest": "24.8.0",
     "jest-junit": "6.4.0",
     "jest-stare": "1.16.0",
