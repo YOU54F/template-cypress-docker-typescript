@@ -1045,7 +1045,7 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@slack/types@1.1.0":
+"@slack/types@1.1.0", "@slack/types@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.1.0.tgz#64465b6c7e2db66498f335934335da81c15812e7"
   integrity sha512-uak4Jbi8nlX8xmElkPt1ixxVQXMKdBRbzBayn5bRzZ9Yx3bQGlyJdFs6GjEKI+fvFP0ZTiGWKOzlJTH3Tm/9fg==
@@ -1055,7 +1055,16 @@
   resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.0.0.tgz#1dc7a63b293c4911e474197585c3feda012df17a"
   integrity sha512-IktC4uD/CHfLQcSitKSmjmRu4a6+Nf/KzfS6dTgUlDzENhh26l8aESKAuIpvYD5VOOE6NxDDIAdPJOXBvUGxlg==
 
-"@slack/webhook@5.0.0", "@slack/webhook@^5.0.0":
+"@slack/webhook@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@slack/webhook/-/webhook-5.0.1.tgz#be50fca83fae98b7005ac1a13859a78a0386520b"
+  integrity sha512-cTp0xOdd28gbMAGR80IzcG2QtwDPO0oq7NopxbitCUiDYVC40r7syJB86MBkt9spABOl1uNjB26tA9Lhe3XBbQ==
+  dependencies:
+    "@slack/types" "^1.1.0"
+    "@types/node" ">=8.9.0"
+    axios "^0.18.0"
+
+"@slack/webhook@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@slack/webhook/-/webhook-5.0.0.tgz#0044a3940afc16cbc607c71acdffddb9e9d4f161"
   integrity sha512-cDj3kz3x9z9271xPNzlwb90DpKTYybG2OWPJHigJL8FegR80rzQyD0v4bGuStGGkHbAYDKE2BMpJambR55hnSg==
