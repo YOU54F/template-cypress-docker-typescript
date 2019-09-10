@@ -55,7 +55,7 @@
     "shelljs": "0.8.3",
     "sonarqube-scanner": "2.5.0",
     "ts-jest": "24.0.2",
-    "ts-loader": "6.0.4",
+    "ts-loader": "6.1.0",
     "ts-node": "8.3.0",
     "tslint": "5.20.0",
     "tslint-config-prettier": "1.18.0",
