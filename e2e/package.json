@@ -63,7 +63,7 @@
     "typescript": "3.6.3",
     "uuid": "3.3.3",
     "wait-port": "0.2.2",
-    "webpack": "4.40.0"
+    "webpack": "4.40.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false
