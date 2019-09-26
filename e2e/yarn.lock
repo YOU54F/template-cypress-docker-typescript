@@ -1089,10 +1089,10 @@
   resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.1.0.tgz#64465b6c7e2db66498f335934335da81c15812e7"
   integrity sha512-uak4Jbi8nlX8xmElkPt1ixxVQXMKdBRbzBayn5bRzZ9Yx3bQGlyJdFs6GjEKI+fvFP0ZTiGWKOzlJTH3Tm/9fg==
 
-"@slack/webhook@5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@slack/webhook/-/webhook-5.0.1.tgz#be50fca83fae98b7005ac1a13859a78a0386520b"
-  integrity sha512-cTp0xOdd28gbMAGR80IzcG2QtwDPO0oq7NopxbitCUiDYVC40r7syJB86MBkt9spABOl1uNjB26tA9Lhe3XBbQ==
+"@slack/webhook@5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@slack/webhook/-/webhook-5.0.2.tgz#822f7f930291ad2600db1ce8c39254260dc4d2fe"
+  integrity sha512-Ns35+KC//EWu+g+Bzp5m18V7qsCBdqAdvV4FJi2ng8+jto4rH2Bv2vUMmMioRn9LIiZ38LPsX/InrFjaO5XwGA==
   dependencies:
     "@slack/types" "^1.1.0"
     "@types/node" ">=8.9.0"
