@@ -1211,6 +1211,13 @@
   dependencies:
     "@types/jest-diff" "*"
 
+"@types/jest@^24.0.19":
+  version "24.0.19"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.19.tgz#f7036058d2a5844fe922609187c0ad8be430aff5"
+  integrity sha512-YYiqfSjocv7lk5H/T+v5MjATYjaTMsUkbDnjGqSMoO88jWdtJXJV4ST/7DKZcoMHMBvB2SeSfyOzZfkxXHR5xg==
+  dependencies:
+    "@types/jest-diff" "*"
+
 "@types/jquery@*":
   version "3.3.31"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.31.tgz#27c706e4bf488474e1cb54a71d8303f37c93451b"
@@ -5593,11 +5600,12 @@ jest-snapshot@^24.9.0:
     pretty-format "^24.9.0"
     semver "^6.2.0"
 
-jest-stare@1.19.0:
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/jest-stare/-/jest-stare-1.19.0.tgz#349e4d4ca089a0422adee33185be5d20f9c346ce"
-  integrity sha512-JWC9CMVHchsGJmxr6HdcmTBCWUSVWStfpubDymlZdKygAzUhep9jRBE6MSsBhFrqQVwewfhLsX7mZPNdvSz+7g==
+jest-stare@1.24.0:
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/jest-stare/-/jest-stare-1.24.0.tgz#208669affe2569fc44c5cd49ef73b7f6b20706dc"
+  integrity sha512-zCsBFhj629Uxx/CkZKJkAOh1s3UrfJIqASE4NY1XiTC7sHNfVCKOCOsV8SdQJ7NuptJ768rH8NUdEsP9T7pAUQ==
   dependencies:
+    "@types/jest" "^24.0.19"
     ansi-parser "^3.2.9"
     bootstrap "^4.3.1"
     chalk "^2.4.2"
@@ -5609,6 +5617,7 @@ jest-stare@1.19.0:
     mustache "^3.0.0"
     pkg-up "^3.0.0"
     popper.js "^1.14.6"
+    yargs "^14.2.0"
 
 jest-util@^24.9.0:
   version "24.9.0"
@@ -9753,6 +9762,14 @@ yargs-parser@^13.1.0:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
+yargs-parser@^15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-15.0.0.tgz#cdd7a97490ec836195f59f3f4dbe5ea9e8f75f08"
+  integrity sha512-xLTUnCMc4JhxrPEPUYD5IBR1mWCK/aT6+RJ/K29JY2y1vD+FhtgKK0AXRWvI262q3QSffAQuTouFIKUuHX89wQ==
+  dependencies:
+    camelcase "^5.0.0"
+    decamelize "^1.2.0"
+
 yargs-unparser@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/yargs-unparser/-/yargs-unparser-1.6.0.tgz#ef25c2c769ff6bd09e4b0f9d7c605fb27846ea9f"
@@ -9812,6 +9829,23 @@ yargs@^13.2.2:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^13.1.0"
+
+yargs@^14.2.0:
+  version "14.2.0"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-14.2.0.tgz#f116a9242c4ed8668790b40759b4906c276e76c3"
+  integrity sha512-/is78VKbKs70bVZH7w4YaZea6xcJWOAwkhbR0CFuZBmYtfTYF0xjGJF43AYd8g2Uii1yJwmS5GR2vBmrc32sbg==
+  dependencies:
+    cliui "^5.0.0"
+    decamelize "^1.2.0"
+    find-up "^3.0.0"
+    get-caller-file "^2.0.1"
+    require-directory "^2.1.1"
+    require-main-filename "^2.0.0"
+    set-blocking "^2.0.0"
+    string-width "^3.0.0"
+    which-module "^2.0.0"
+    y18n "^4.0.0"
+    yargs-parser "^15.0.0"
 
 yauzl@2.10.0, yauzl@^2.4.2:
   version "2.10.0"
