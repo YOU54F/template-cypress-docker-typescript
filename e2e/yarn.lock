@@ -1066,10 +1066,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@slack/types@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.2.0.tgz#edad17244ccc335afb31c1089a0a86ae480373f5"
-  integrity sha512-XsksAErF2CN9jqNzKrm3tVkGke0wT6xsIdw80h9PIKaYJzmpt5soweaFGbV3j74VuwIOOq4P5sHjrSZaP0Du0w==
+"@slack/types@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.2.1.tgz#132d50d02efb452c9a58573964b22f5f18ab9b1a"
+  integrity sha512-NyGh7MibW+a0OHkwwOPlv63hC639dzQdkFy4dj0tl4sAdZR4OBaE/OhXixKhCzcT3kJsPXaQmvkUN7sqSf52iA==
 
 "@slack/types@^1.0.0":
   version "1.0.0"
