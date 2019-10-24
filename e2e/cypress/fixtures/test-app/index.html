@@ -23,24 +23,24 @@
     click <span title="Run All Tests">↻</span> Run All Tests.
   </blockquote>
   <section>
-    <h2>getByPlaceholderText</h2>
+    <h2>findByPlaceholderText</h2>
     <input type="text" placeholder="Placeholder Text" />
   </section>
   <section>
-    <h2>getByText</h2>
+    <h2>findByText</h2>
     <button onclick="this.innerText = 'Button Clicked'">Button Text</button>
     <div id="nested">
-      <h3>getByText within</h3>
+      <h3>findByText within</h3>
       <button onclick="this.innerText = 'Button Clicked'">Button Text</button>
     </div>
   </section>
   <section>
-    <h2>getByLabelText</h2>
+    <h2>findByLabelText</h2>
     <label for="input-labelled-by-id">Label For Input Labelled By Id</label>
     <input type="text" placeholder="Input Labelled By Id" id="input-labelled-by-id" />
   </section>
   <section>
-    <h2>getByAltText</h2>
+    <h2>findByAltText</h2>
     <img
       src="data:image/png;base64,"
       alt="Image Alt Text"
@@ -48,7 +48,7 @@
     />
   </section>
   <section>
-    <h2>getByTestId</h2>
+    <h2>findByTestId</h2>
     <img
       data-testid="image-with-random-alt-tag"
       src="data:image/png;base64,"
@@ -56,7 +56,7 @@
     />
   </section>
   <section>
-    <h2>getAllByText</h2>
+    <h2>findAllByText</h2>
     <button onclick="this.innerText = 'Jackie Kicked'">Jackie Chan 1</button>
     <button onclick="this.innerText = 'Jackie Kicked'">Jackie Chan 2</button>
   </section>

@@ -2,28 +2,28 @@ describe("dom-testing-library commands", () => {
   beforeEach(() => {
     cy.visit("http://localhost:13370");
   });
-  it("getByPlaceholderText", () => {
-    cy.getByPlaceholderText("Placeholder Text")
+  it("findByPlaceholderText", () => {
+    cy.findByPlaceholderText("Placeholder Text")
       .click()
       .type("Hello Placeholder");
   });
 
-  it("getByLabelText", () => {
-    cy.getByLabelText("Label For Input Labelled By Id")
+  it("findByLabelText", () => {
+    cy.findByLabelText("Label For Input Labelled By Id")
       .click()
       .type("Hello Input Labelled By Id");
   });
 
-  it("getByAltText", () => {
-    cy.getByAltText("Image Alt Text").click();
+  it("findByAltText", () => {
+    cy.findByAltText("Image Alt Text").click();
   });
 
-  it("getByTestId", () => {
-    cy.getByTestId("image-with-random-alt-tag").click();
+  it("findByTestId", () => {
+    cy.findByTestId("image-with-random-alt-tag").click();
   });
 
-  it("getAllByText", () => {
-    cy.getAllByText(/^Jackie Chan/).click({ multiple: true });
+  it("findAllByText", () => {
+    cy.findAllByText(/^Jackie Chan/).click({ multiple: true });
   });
 
   it("queryByText", () => {
@@ -33,36 +33,36 @@ describe("dom-testing-library commands", () => {
     );
   });
 
-  it("getByText within", () => {
+  it("findByText within", () => {
     cy.get("#nested").within(() => {
-      cy.getByText("Button Text").click();
+      cy.findByText("Button Text").click();
     });
   });
 
-  // it('getByText in container', () => {
+  // it('findByText in container', () => {
   //   cy.get('#nested').then(subject => {
-  //     cy.getByText('Button Text', {container: subject}).click()
+  //     cy.findByText('Button Text', {container: subject}).click()
   //   })
   // })
 
-  it("getByTestId only throws the error message", () => {
+  it("findByTestId only throws the error message", () => {
     const testId = "Some random id";
     const errorMessage = `Unable to find an element by: [data-testid="${testId}"]`;
     cy.on("fail", err => {
       expect(err.message).to.eq(errorMessage);
     });
 
-    cy.getByTestId(testId).click();
+    cy.findByTestId(testId).click();
   });
 
-  it("getByText only throws the error message", () => {
+  it("findByText only throws the error message", () => {
     const text = "Some random text";
     const errorMessage = `Unable to find an element with the text: ${text}. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.`;
     cy.on("fail", err => {
       expect(err.message).to.eq(errorMessage);
     });
 
-    cy.getByText("Some random text").click();
+    cy.findByText("Some random text").click();
   });
 });
 
