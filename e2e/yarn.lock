@@ -9555,10 +9555,10 @@ wait-for-expect@^1.3.0:
   resolved "https://registry.yarnpkg.com/wait-for-expect/-/wait-for-expect-1.3.0.tgz#65241ce355425f907f5d127bdb5e72c412ff830c"
   integrity sha512-8fJU7jiA96HfGPt+P/UilelSAZfhMBJ52YhKzlmZQvKEZU2EcD1GQ0yqGB6liLdHjYtYAoGVigYwdxr5rktvzA==
 
-wait-port@0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/wait-port/-/wait-port-0.2.6.tgz#261e615adb2e10c8b91c836722c85919ccf081cc"
-  integrity sha512-nXE5Yp0Zs1obhFVc0Da7WVJc3y0LxoCq3j4mtV0NdI5P/ZvRdKp5yhuojvMOcOxSwpQL1hGbOgMNQ+4wpRpwCA==
+wait-port@0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/wait-port/-/wait-port-0.2.7.tgz#cdb4b78e662328099b187c7bb75fe0aa9cb6eb6c"
+  integrity sha512-pJ6cSBIa0w1sDg4y/wXN4bmvhM9OneOvwdFHo647L2NShBi/oXG4lRaLic5cO1HaYGbUhEvratPfl/WMlIC+tg==
   dependencies:
     chalk "^2.4.2"
     commander "^3.0.2"
