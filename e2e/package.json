@@ -61,7 +61,7 @@
     "tslint-config-prettier": "1.18.0",
     "tslint-no-focused-test": "0.5.0",
     "typescript": "3.7.5",
-    "uuid": "3.3.3",
+    "uuid": "3.4.0",
     "wait-port": "0.2.7",
     "webpack": "4.41.5"
   },
