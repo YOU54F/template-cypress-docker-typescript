@@ -24,7 +24,7 @@ jobs:
             - ~/.cache
       - run:
           name: Install jq
-          command: cd e2e && apt-get update && apt-get install jq xsel       
+          command: cd e2e && apt-get update && apt-get install -y jq xsel       
       - run:
           name: Running E2E tests
           when: on_success
