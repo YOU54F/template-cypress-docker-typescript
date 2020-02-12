@@ -114,7 +114,7 @@ The GUI can be opened by `npx cypress open` but requires a `--env configFile=<en
 
 ```
 combine-reports:
-	npx mochawesome-merge --reportDir cypress/reports/mocha > mochareports/report-$$(date +'%Y%m%d-%H%M%S').json
+	npx mochawesome-merge cypress/reports/mocha/*.json > mochareports/report-$$(date +'%Y%m%d-%H%M%S').json
 
 generate-report:
 	npx marge mochareports/*.json -f report-$$(date +'%Y%m%d-%H%M%S') -o mochareports
