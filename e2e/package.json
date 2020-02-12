@@ -10,7 +10,7 @@
     "url": "git+https://github.com/you54f/cypress-docker-typescript.git"
   },
   "scripts": {
-    "combine-reports": "mochawesome-merge --reportDir cypress/reports/mocha > mochareports/report-$$(date +'%Y%m%d-%H%M%S').json",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > mochareports/report-$$(date +'%Y%m%d-%H%M%S').json",
     "generate-report": "marge mochareports/*.json -f report-$$(date +'%Y%m%d-%H%M%S') -o mochareports",
     "slack": "cypress-slack-reporter --logger",
     "lint": "tslint --project .",
