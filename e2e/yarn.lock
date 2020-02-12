@@ -2956,7 +2956,7 @@ commander@4.1.0, commander@^4.0.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.0.tgz#545983a0603fe425bc672d66c9e3c89c42121a83"
   integrity sha512-NIQrwvv9V39FHgGFm36+U9SMQzbiHvU79k+iADraJTpmrFFfx7Ds0IvDoAdZsDrknlkRk14OYoWXb57uTh7/sw==
 
-commander@4.1.1:
+commander@4.1.1, commander@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
@@ -2966,7 +2966,7 @@ commander@^2.11.0, commander@^2.12.1, commander@^2.20.0, commander@^2.9.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
-commander@^3.0.0, commander@^3.0.2:
+commander@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/commander/-/commander-3.0.2.tgz#6837c3fb677ad9933d1cfba42dd14d5117d6b39e"
   integrity sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow==
@@ -3352,14 +3352,14 @@ cypress-multi-reporters@1.2.3:
     debug "^4.1.1"
     lodash "^4.17.11"
 
-cypress-slack-reporter@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.5.0.tgz#23129a256c42cd8c37fe5820fcadcab7ab01a7c7"
-  integrity sha512-WWcTRiOk2IuUYlewyi9wuNKR7LIey3VsmfWiMEwIqJurs9plJb4e+tatcua3OqfBbHRtg7HulovnJiKzeTCKUg==
+cypress-slack-reporter@0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.5.1.tgz#b390f7b8bf415b9c489c7848c58d94d9d301ef5e"
+  integrity sha512-WoIea2WJe0A2i+9vF5Ojv6B6pbt6P1Y3RQg0Tkpw4RIkypvdQzJrLZVCJGhMPW+0PKQHahUM1cWFKwrZdD9Krw==
   dependencies:
     "@slack/types" "^1.0.0"
     "@slack/webhook" "^5.0.0"
-    commander "^3.0.0"
+    commander "^4.0.0"
 
 cypress@4.0.1:
   version "4.0.1"
@@ -8071,11 +8071,6 @@ require-from-string@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
   integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
-
-require-main-filename@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
-  integrity sha1-l/cXtp1IeE9fUmpsWqj/3aBVpNE=
 
 require-main-filename@^2.0.0:
   version "2.0.0"
