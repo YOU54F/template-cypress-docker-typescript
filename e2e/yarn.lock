@@ -3336,13 +3336,13 @@ cypress-cucumber-preprocessor@1.12.0:
     glob "^7.1.2"
     through "^2.3.8"
 
-cypress-failed-log@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/cypress-failed-log/-/cypress-failed-log-2.6.0.tgz#9219ce138e8f9fa30fecb2dfa7fc9ea874015f41"
-  integrity sha512-01tf8tG9P4Cq8SlsJn+Xdw+wVy0uOWeEq8qlqeGNb94XN48p34wDpXuoPHndfl0XY0vSQly8vvwQWEDGGf/C1g==
+cypress-failed-log@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/cypress-failed-log/-/cypress-failed-log-2.6.1.tgz#bc4baeadac9f47a07ef6241982b874c1a2288aa5"
+  integrity sha512-Gsz5qipMaRSuUTkS68d3/qY+aCQvkqXKZOFPkNDlWqUOrPnLvZEkE8FdU5Hi6Z1tpkKS/vf9w4JA83WNd95OAw==
   dependencies:
     debug "4.1.1"
-    logdown "3.2.8"
+    logdown "3.3.0"
 
 cypress-multi-reporters@1.2.3:
   version "1.2.3"
@@ -6246,10 +6246,10 @@ log-update@^2.3.0:
     cli-cursor "^2.0.0"
     wrap-ansi "^3.0.1"
 
-logdown@3.2.8:
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/logdown/-/logdown-3.2.8.tgz#0bfff0c260a4a55f289f6b4420daefec30479843"
-  integrity sha512-ia/AslkwnxwWzaReeADifBwfh2xtUd/T/qdsnkrPlQbefKt4LkUWGSn/xWuhEwY3p2zSIhAZYcWCEGGIy9Lr2w==
+logdown@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/logdown/-/logdown-3.3.0.tgz#639dd2d3becaf0d9657ab63e812fa0e0f0b19fe7"
+  integrity sha512-CECrThg4JtaVNJ8P7zlWDaFveHTg3VIrrUXvc8L2840VVuyZcLW3dDrdURgzHLSAxoKJt/F55RbKdQ0alI+Njg==
   dependencies:
     chalk "^2.3.0"
 
