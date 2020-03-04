@@ -1231,7 +1231,7 @@
   dependencies:
     type-detect "4.0.8"
 
-"@slack/types@1.4.0":
+"@slack/types@1.4.0", "@slack/types@^1.2.1":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.4.0.tgz#24e0f0cd5b3c4578a7e023aba97969d89c667562"
   integrity sha512-G5u2gCl7oci0k4E9KIX33nmA4YPp1pXYwS/It7ct9dOglCcj63Ee5GRCgtplzOBS+2++DMdp6l3ZCq+VeAMrfw==
@@ -1241,19 +1241,14 @@
   resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.0.0.tgz#1dc7a63b293c4911e474197585c3feda012df17a"
   integrity sha512-IktC4uD/CHfLQcSitKSmjmRu4a6+Nf/KzfS6dTgUlDzENhh26l8aESKAuIpvYD5VOOE6NxDDIAdPJOXBvUGxlg==
 
-"@slack/types@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.1.0.tgz#64465b6c7e2db66498f335934335da81c15812e7"
-  integrity sha512-uak4Jbi8nlX8xmElkPt1ixxVQXMKdBRbzBayn5bRzZ9Yx3bQGlyJdFs6GjEKI+fvFP0ZTiGWKOzlJTH3Tm/9fg==
-
-"@slack/webhook@5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@slack/webhook/-/webhook-5.0.2.tgz#822f7f930291ad2600db1ce8c39254260dc4d2fe"
-  integrity sha512-Ns35+KC//EWu+g+Bzp5m18V7qsCBdqAdvV4FJi2ng8+jto4rH2Bv2vUMmMioRn9LIiZ38LPsX/InrFjaO5XwGA==
+"@slack/webhook@5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@slack/webhook/-/webhook-5.0.3.tgz#2205cba9a8d49d2ae84ca93f11ab4a1dba2f963b"
+  integrity sha512-51vnejJ2zABNumPVukOLyerpHQT39/Lt0TYFtOEz/N2X77bPofOgfPj2atB3etaM07mxWHLT9IRJ4Zuqx38DkQ==
   dependencies:
-    "@slack/types" "^1.1.0"
+    "@slack/types" "^1.2.1"
     "@types/node" ">=8.9.0"
-    axios "^0.18.0"
+    axios "^0.19.0"
 
 "@slack/webhook@^5.0.0":
   version "5.0.0"
@@ -2059,6 +2054,13 @@ axios@^0.18.0:
   dependencies:
     follow-redirects "1.5.10"
     is-buffer "^2.0.2"
+
+axios@^0.19.0:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+  dependencies:
+    follow-redirects "1.5.10"
 
 babel-jest@^25.1.0:
   version "25.1.0"
