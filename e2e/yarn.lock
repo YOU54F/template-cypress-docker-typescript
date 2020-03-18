@@ -1231,15 +1231,20 @@
   dependencies:
     type-detect "4.0.8"
 
-"@slack/types@1.4.0", "@slack/types@^1.2.1":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.4.0.tgz#24e0f0cd5b3c4578a7e023aba97969d89c667562"
-  integrity sha512-G5u2gCl7oci0k4E9KIX33nmA4YPp1pXYwS/It7ct9dOglCcj63Ee5GRCgtplzOBS+2++DMdp6l3ZCq+VeAMrfw==
+"@slack/types@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.5.0.tgz#5c2cb0f718689266ff295aad33301d489272c842"
+  integrity sha512-oCYgatJYxHf9wE3tKXzOLeeTsF0ghX1TIcguNfVmO2V6NDe+cHAzZRglEOmJLdRINDS5gscAgSkeZpDhpKBeUA==
 
 "@slack/types@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.0.0.tgz#1dc7a63b293c4911e474197585c3feda012df17a"
   integrity sha512-IktC4uD/CHfLQcSitKSmjmRu4a6+Nf/KzfS6dTgUlDzENhh26l8aESKAuIpvYD5VOOE6NxDDIAdPJOXBvUGxlg==
+
+"@slack/types@^1.2.1":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@slack/types/-/types-1.4.0.tgz#24e0f0cd5b3c4578a7e023aba97969d89c667562"
+  integrity sha512-G5u2gCl7oci0k4E9KIX33nmA4YPp1pXYwS/It7ct9dOglCcj63Ee5GRCgtplzOBS+2++DMdp6l3ZCq+VeAMrfw==
 
 "@slack/webhook@5.0.3":
   version "5.0.3"
