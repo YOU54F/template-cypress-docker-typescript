@@ -3806,10 +3806,10 @@ cypress-cucumber-preprocessor@1.12.0:
     glob "^7.1.2"
     through "^2.3.8"
 
-cypress-failed-log@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/cypress-failed-log/-/cypress-failed-log-2.6.2.tgz#4997f3b8c6cb3226a900bb717b03e4547522646d"
-  integrity sha512-t1meEIME0fFzvnpIrjUMt5AoQXoUQdp5lA7KZRDueb7knkwsH08BvAg3ELdLCM7kKM0QVfeQrx9GgCsgqScJ5g==
+cypress-failed-log@2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/cypress-failed-log/-/cypress-failed-log-2.7.0.tgz#762026cbb52c0d0e85ccc0bb152cf8f767eb92a1"
+  integrity sha512-9tSuFRjlAGZuH+IIiyDM7IAvjh4dmet/iUPLRxet9ugLkELw/cyW7jUCQmR7j4aW8Fl+ZlbNUekVonBaS322SA==
   dependencies:
     debug "4.1.1"
     logdown "3.3.1"
