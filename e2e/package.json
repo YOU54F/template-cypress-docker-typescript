@@ -32,7 +32,7 @@
     "@slack/webhook": "5.0.3",
     "@types/jest": "25.1.5",
     "@types/node": "10.17.21",
-    "commander": "4.1.1",
+    "commander": "5.1.0",
     "cypress": "4.5.0",
     "cypress-cucumber-preprocessor": "1.12.0",
     "cypress-failed-log": "2.7.0",
