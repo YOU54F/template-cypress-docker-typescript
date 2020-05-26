@@ -62,7 +62,7 @@
     "tslint-no-focused-test": "0.5.0",
     "typescript": "3.9.3",
     "uuid": "8.1.0",
-    "wait-port": "0.2.7",
+    "wait-port": "0.2.9",
     "webpack": "4.43.0"
   },
   "cypress-cucumber-preprocessor": {
