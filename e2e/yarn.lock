@@ -9096,10 +9096,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-sonarqube-scanner@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/sonarqube-scanner/-/sonarqube-scanner-2.6.0.tgz#ba593635edc96cc86212ec9a987fe24f6276ec93"
-  integrity sha512-H6DKMW2WBjFAZ81ubscwE803aiaTQCBeOIu+STrACRdNtrw6WmRmUvw5JY5eGxs/Q+ysyEvz4hInWn0h+7YAlQ==
+sonarqube-scanner@2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/sonarqube-scanner/-/sonarqube-scanner-2.7.0.tgz#41c9ae129e9f80e12853986189278238f0c3f189"
+  integrity sha512-7PJUPyTbTlDO6/5ljQnv/zaiLZO8305J1ISvkMfFlt2GToVm63xJLvhiiO2feGeXRhXhdC/bTfQr5PmBE/Km5Q==
   dependencies:
     download "^7.1.0"
     extend "3.0.2"
