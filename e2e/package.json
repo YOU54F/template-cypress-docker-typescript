@@ -31,7 +31,7 @@
     "@slack/types": "1.7.0",
     "@slack/webhook": "5.0.3",
     "@types/jest": "25.2.3",
-    "@types/node": "10.17.26",
+    "@types/node": "10.17.27",
     "commander": "5.1.0",
     "cypress": "4.10.0",
     "cypress-cucumber-preprocessor": "1.12.0",
