@@ -27,7 +27,7 @@
     "test:cypress:record": "npm-run-all --silent --parallel --race test:cypress:serve test:cypress:run:record"
   },
   "dependencies": {
-    "@cypress/webpack-preprocessor": "5.4.8",
+    "@cypress/webpack-preprocessor": "5.4.10",
     "@slack/types": "1.10.0",
     "@slack/webhook": "5.0.3",
     "@types/jest": "25.2.3",
