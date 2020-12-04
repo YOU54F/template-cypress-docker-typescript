@@ -3721,10 +3721,10 @@ cypress-cucumber-preprocessor@1.12.0:
     glob "^7.1.2"
     through "^2.3.8"
 
-cypress-failed-log@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/cypress-failed-log/-/cypress-failed-log-2.8.0.tgz#390c487250a69e6073979ddbcabc24bd0b3fb9d3"
-  integrity sha512-KH2QolJY62cHuIwZp6x7ENF2T0ViSzF4GtJqVIU/J3i4b505j9DEKfhR+R25ya92Qgs2hbt8XBGDzr3XZ8zC3w==
+cypress-failed-log@2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/cypress-failed-log/-/cypress-failed-log-2.9.0.tgz#77b96ef7a6691dd5a2688c73f4be8ce33d4d9319"
+  integrity sha512-9qNo1vkScjUFYvm/5oti8cBZfw+L1c0fka2+4yNRVHBJUcFG0mb74XuBlawWZwGBJupigFgMC8ZGEsslulT2KA==
   dependencies:
     debug "4.1.1"
     logdown "3.3.1"
