@@ -29,7 +29,7 @@
   "dependencies": {
     "@cypress/webpack-preprocessor": "5.5.0",
     "@slack/types": "1.10.0",
-    "@slack/webhook": "5.0.3",
+    "@slack/webhook": "5.0.4",
     "@types/jest": "25.2.3",
     "@types/node": "10.17.50",
     "commander": "5.1.0",
