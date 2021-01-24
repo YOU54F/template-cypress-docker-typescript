@@ -3635,12 +3635,12 @@ cypress-cucumber-preprocessor@1.12.0:
     glob "^7.1.2"
     through "^2.3.8"
 
-cypress-failed-log@2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/cypress-failed-log/-/cypress-failed-log-2.9.0.tgz#77b96ef7a6691dd5a2688c73f4be8ce33d4d9319"
-  integrity sha512-9qNo1vkScjUFYvm/5oti8cBZfw+L1c0fka2+4yNRVHBJUcFG0mb74XuBlawWZwGBJupigFgMC8ZGEsslulT2KA==
+cypress-failed-log@2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/cypress-failed-log/-/cypress-failed-log-2.9.1.tgz#8a5f0779ee58d40dbd93047d47938da14300fd0e"
+  integrity sha512-mQABpDZNaUeHl7Ex82cfp5PgDVRiBRU+Hy3/nMZOiTlJeNGDd2m+3sGRGOtl8irObhO9mA0n6alOjzhgpNVUbg==
   dependencies:
-    debug "4.1.1"
+    debug "4.3.1"
     logdown "3.3.1"
 
 cypress-multi-reporters@1.4.0:
@@ -3768,12 +3768,12 @@ debug@4.0.1:
   dependencies:
     ms "^2.1.1"
 
-debug@4.1.1, debug@^4.1.0, debug@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
-  integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
+debug@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
+  integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
   dependencies:
-    ms "^2.1.1"
+    ms "2.1.2"
 
 debug@=3.1.0:
   version "3.1.0"
@@ -3781,6 +3781,13 @@ debug@=3.1.0:
   integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   dependencies:
     ms "2.0.0"
+
+debug@^4.1.0, debug@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+  integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
+  dependencies:
+    ms "^2.1.1"
 
 debug@^4.2.0:
   version "4.2.0"
