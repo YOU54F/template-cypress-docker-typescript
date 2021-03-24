@@ -48,7 +48,7 @@
     "mochawesome": "6.2.2",
     "mochawesome-merge": "4.2.0",
     "mochawesome-report-generator": "5.2.0",
-    "cypress-slack-reporter": "1.1.3-alpha",
+    "cypress-slack-reporter": "1.1.4-alpha",
     "npm-run-all": "4.1.5",
     "prettier": "2.2.1",
     "serve": "11.3.2",
