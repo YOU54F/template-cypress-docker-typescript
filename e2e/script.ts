@@ -34,7 +34,7 @@ CypressNpmApi.run({
     console.log("Merged report available here:-",generatedReport);
     return generatedReport
   })
-  .then(generatedReport => {
+  .then(async generatedReport => {
     const base = process.env.PWD || ".";
     const program: any = {
       ciProvider: "circleci",
@@ -59,16 +59,17 @@ CypressNpmApi.run({
       screenshotDirectory,
       verbose
     });
-    const slack = slackRunner(
+    const result = await slackRunner({
       ciProvider,
-      vcsProvider,
-      reportDirectory,
-      videoDirectory,
-      screenshotDirectory,
-      verbose
+      vcsRoot:vcsProvider,
+      reportDir:reportDirectory,
+      videoDir:videoDirectory,
+      screenshotDir:screenshotDirectory,
+      verbose}
     );
      // tslint:disable-next-line: no-console
      console.log("Finished slack upload")
+     console.log(result)
 
   })
   .catch((err: any) => {

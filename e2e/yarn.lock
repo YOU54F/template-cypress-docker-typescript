@@ -3691,10 +3691,10 @@ cypress-multi-reporters@1.4.0:
     debug "^4.1.1"
     lodash "^4.17.15"
 
-cypress-slack-reporter@1.1.2-alpha:
-  version "1.1.2-alpha"
-  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-1.1.2-alpha.tgz#1c32c86e308c57503d79d4d7b31edf5799730627"
-  integrity sha512-/Sv6/uWXNqwl7k4SL+l6Jk3rGerzaVeyk1a+848WRywy5DKSQiup1wxQCV4kVMumPfWKSz9xELVB7MebzxI6pQ==
+cypress-slack-reporter@1.1.3-alpha:
+  version "1.1.3-alpha"
+  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-1.1.3-alpha.tgz#9e8c99b8810f3bd9012b682f702b05eaa4b7a26d"
+  integrity sha512-/vfRcJ+aSYH/erUC0F/bI3w+DVBJq7Z7lA58jJG6sGE0iWidl/gqPEiYo7YJRXhqwL87A1SElAo+bNts2Ojf8Q==
   dependencies:
     "@slack/types" "^1.0.0"
     "@slack/webhook" "^5.0.0"
@@ -3702,6 +3702,7 @@ cypress-slack-reporter@1.1.2-alpha:
     "@types/pino" "^6.0.1"
     commander "^5.0.0"
     del "^5.1.0"
+    dotenv "8.2.0"
     pino "^6.2.1"
 
 cypress@4.12.1:
@@ -4110,6 +4111,11 @@ domexception@^2.0.1:
   integrity sha512-yxJ2mFy/sibVQlu5qHjOkf9J3K6zgmCxgJ94u2EdvDOV09H+32LtRswEcUsmUWN72pVLOEnTSRaIVVzVQgS0dg==
   dependencies:
     webidl-conversions "^5.0.0"
+
+dotenv@8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
 download@^7.1.0:
   version "7.1.0"
