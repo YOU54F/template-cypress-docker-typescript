@@ -37,7 +37,7 @@ generate-report:
 	npx marge mochareports/*.json -f report-$$(date +'%Y%m%d-%H%M%S') -o mochareports
 
 slack-alert:
-	npx cypress-slack-reporter --logger
+	npx cypress-slack-reporter --verbose
 
 docker-build:
 	docker build . -t $(DOCKERIMGNAME)
