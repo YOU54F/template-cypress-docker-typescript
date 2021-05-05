@@ -3627,10 +3627,10 @@ cypress-multi-reporters@1.5.0:
     debug "^4.1.1"
     lodash "^4.17.15"
 
-cypress-slack-reporter@0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.6.0.tgz#e6b6efbed4651261af52044f4da8d3c8dcd586dc"
-  integrity sha512-yEh4tSislEkswRPf8aP/rqueXtCA7r6+TtCfwkoE6P89lW6N7RcOMUvAX00cErv4wb0vNgLQON6sFvjbqBmSgw==
+cypress-slack-reporter@0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/cypress-slack-reporter/-/cypress-slack-reporter-0.10.0.tgz#f0292dbf71fd8ab73bbbab5646aeec0d6b9dbc68"
+  integrity sha512-eveFtA2WocVPu8hTctxy76p8szyKAfh6DuNi73QowxwXinYS1U9+dQF/FaYeAW1Yvc+3cjcK7AOdnfR03ueiOw==
   dependencies:
     "@slack/types" "^1.0.0"
     "@slack/webhook" "^5.0.0"
