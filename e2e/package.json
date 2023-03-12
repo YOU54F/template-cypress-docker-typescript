@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "5.7.0",
-    "@slack/types": "2.0.0",
+    "@slack/types": "2.8.0",
     "@slack/webhook": "6.0.0",
     "@types/jest": "26.0.23",
     "@types/node": "10.17.59",
